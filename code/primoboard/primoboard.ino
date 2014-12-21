@@ -12,6 +12,11 @@ int buttonState = 0;
 int currentInstruction = -1;
 int dispatchPoint = -1; // if we are in the function, used to store where we came from so we can return back there
 
+String NOOP = "NULL";
+String FORWARD = "AHEAD";
+String LEFT = "LEFT";
+String RIGHT = "RIGHT";
+String FUNCTION = "FUNCTION";
 
 //31 33 35 37
 //33,35,31,37
@@ -51,6 +56,16 @@ void readValues(int a[],int r[]) {
   }
 }
 
+// read a single analog value
+int readValue(int i, int r[]){
+   for (int j = 0; j < repeats; j++){
+     int value = analogRead(i);
+     r[j] = value;
+   }
+   sort(r,repeats);
+   return r[repeats/2];
+}
+
 void transmitProgram(int medians[]){
   for (int i = 0; i < inputs; i ++){
     Serial.println(medians[i]);
@@ -60,15 +75,15 @@ void transmitProgram(int medians[]){
 
 String instruction(int rawInput){
   if (rawInput > 1015){
-    return "NULL"; // no instruction
+    return NOOP;
   } if (rawInput > 725) {
-    return "LEFT"; 
+    return LEFT; 
   } if (rawInput > 425){
-    return "FUNCTION";
+    return FUNCTION;
   } if (rawInput > 180) {
-    return "FORWARD";
+    return FORWARD;
   }
-  return "RIGHT";
+  return RIGHT;
 }
 
 void loop() // run over and over
@@ -92,18 +107,49 @@ void loop() // run over and over
       if (buttonState == 1){
         transmitProgram(medians);
         currentInstruction = 0;
+         // set all LEDs to low
+        for (int i = 0; i < inputs; i ++) {
+           digitalWrite(leds[i],LOW); 
+        }
       }
     }
   } else {
-    //send the current instruction
-    String action = instruction(medians[currentInstruction]);
-    Serial.println(action);
-    //Serial.println(medians[currentInstruction]);
-    currentInstruction ++;
-    if (currentInstruction > 15){
-      currentInstruction = -1;
-    }
-            
+    // read the instruction at the current point 
+    String action = instruction(readValue(currentInstruction,dist));
+    String setAction = instruction(medians[currentInstruction]);
+    if (action != setAction) {
+      currentInstruction = -1; //terminating as program changed
+      Serial.println("Program Changed");
+    } else {
+        if (action != NOOP) {
+          digitalWrite(leds[currentInstruction],HIGH);
+          //if (action != FUNCTION){
+          Serial.println(action);
+          //}
+          delay(1000);
+          digitalWrite(leds[currentInstruction],LOW);
+        }
+        currentInstruction ++;
+        
+        Serial.println(currentInstruction);
+        
+        if (currentInstruction == 12) { // end of program - terminate
+          Serial.println("Program end");
+          currentInstruction = -1;
+        } else if (action == FUNCTION) {
+           dispatchPoint = currentInstruction;
+           currentInstruction = 12; 
+           Serial.print("Function call, dispatch is: ");
+           Serial.println(dispatchPoint);
+           
+        }   else if (currentInstruction > 15) { //end of function
+          Serial.print("Function end, returning to: ");
+          Serial.println(dispatchPoint);
+          currentInstruction = dispatchPoint;
+          dispatchPoint = -1;
+          
+        }      
+      }
   }
   
  
