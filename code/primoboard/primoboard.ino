@@ -12,11 +12,11 @@ int buttonState = 0;
 int currentInstruction = -1;
 int dispatchPoint = -1; // if we are in the function, used to store where we came from so we can return back there
 
-String NOOP = "NULL";
-String FORWARD = "AHEAD";
-String LEFT = "LEFT";
-String RIGHT = "RIGHT";
-String FUNCTION = "FUNCTION";
+String NOOP = "N";
+String FORWARD = "A";
+String LEFT = "L";
+String RIGHT = "R";
+String FUNCTION = "F";
 
 //31 33 35 37
 //33,35,31,37
@@ -105,7 +105,6 @@ void loop() // run over and over
     if (b != buttonState){
       buttonState = b;
       if (buttonState == 1){
-        transmitProgram(medians);
         currentInstruction = 0;
          // set all LEDs to low
         for (int i = 0; i < inputs; i ++) {
@@ -119,51 +118,29 @@ void loop() // run over and over
     String setAction = instruction(medians[currentInstruction]);
     if (action != setAction) {
       currentInstruction = -1; //terminating as program changed
-      Serial.println("Program Changed");
     } else {
         if (action != NOOP) {
           digitalWrite(leds[currentInstruction],HIGH);
-          //if (action != FUNCTION){
-          Serial.println(action);
-          //}
+          if (action != FUNCTION){
+              Serial.println(action);
+              mySerial.println(action);
+          }
           delay(1000);
           digitalWrite(leds[currentInstruction],LOW);
         }
         currentInstruction ++;
-        
-        Serial.println(currentInstruction);
-        
+                
         if (currentInstruction == 12) { // end of program - terminate
-          Serial.println("Program end");
           currentInstruction = -1;
         } else if (action == FUNCTION) {
            dispatchPoint = currentInstruction;
            currentInstruction = 12; 
-           Serial.print("Function call, dispatch is: ");
-           Serial.println(dispatchPoint);
-           
         }   else if (currentInstruction > 15) { //end of function
-          Serial.print("Function end, returning to: ");
-          Serial.println(dispatchPoint);
           currentInstruction = dispatchPoint;
           dispatchPoint = -1;
-          
         }      
-      }
+     }
   }
-  
- 
-  //mySerial.print("0");
-  //mySerial.write((byte)0);
-  //delay(1000);
-  //mySerial.print("1");
-  //mySerial.write((byte)1);
-  //delay(1000);
-
-  //mySerial.print("AAAAAAAAAAAAAA");
-
-  //delay(1000);
-  //mySerial.print("BB");
 }
 
 
