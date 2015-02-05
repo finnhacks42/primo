@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="wheel_stickers.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="299.58009"
+     inkscape:cy="667.14286"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1614"
+     inkscape:window-height="820"
+     inkscape:window-x="143"
+     inkscape:window-y="148"
+     inkscape:window-maximized="0" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       transform="matrix(0.63971456,0,0,0.63971456,54.55751,182.53786)"
+       d="m 494.28572,335.21933 a 171.42857,171.42857 0 1 1 -342.85715,0 171.42857,171.42857 0 1 1 342.85715,0 z"
+       sodipodi:ry="171.42857"
+       sodipodi:rx="171.42857"
+       sodipodi:cy="335.21933"
+       sodipodi:cx="322.85715"
+       id="path2985"
+       style="fill:none;stroke:#000000;stroke-width:0.5538888;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc" />
+    <path
+       transform="matrix(0.73885492,0,0,0.73885492,-113.20369,157.93556)"
+       d="m 530.33008,323.53711 a 23.738585,23.738585 0 1 1 -47.47717,0 23.738585,23.738585 0 1 1 47.47717,0 z"
+       sodipodi:ry="23.738585"
+       sodipodi:rx="23.738585"
+       sodipodi:cy="323.53711"
+       sodipodi:cx="506.59149"
+       id="path2987"
+       style="fill:none;stroke:#000000;stroke-width:0.47956738;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc" />
+    <g
+       id="g3015"
+       inkscape:label="Grid_Polar:R1:A32"
+       transform="matrix(0.5464802,0,0,0.5464802,500.23679,396.98255)">
+      <circle
+         d="m 200,0 c 0,110.45695 -89.54305,200 -200,200 -110.45695,0 -200,-89.54305 -200,-200 0,-110.45695 89.54305,-200 200,-200 110.45695,0 200,89.54305 200,200 z"
+         id="circle3017"
+         inkscape:label="MajorDivCircle1:R200.0"
+         style="fill:none;stroke:#000000;stroke-width:3.65978503"
+         r="200"
+         cy="0"
+         cx="0"
+         sodipodi:cx="0"
+         sodipodi:cy="0"
+         sodipodi:rx="200"
+         sodipodi:ry="200" />
+      <path
+         id="path3019"
+         inkscape:label="RadialGridline0"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 0,200"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3021"
+         inkscape:label="RadialGridline1"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 39.018064,196.15706"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3023"
+         inkscape:label="RadialGridline2"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 76.536686,184.77591"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3025"
+         inkscape:label="RadialGridline3"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 111.11405,166.29392"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3027"
+         inkscape:label="RadialGridline4"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 141.42136,141.42136"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3029"
+         inkscape:label="RadialGridline5"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 166.29392,111.11405"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3031"
+         inkscape:label="RadialGridline6"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 184.77591,76.536686"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3033"
+         inkscape:label="RadialGridline7"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 196.15706,39.018064"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3035"
+         inkscape:label="RadialGridline8"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 200,0"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3037"
+         inkscape:label="RadialGridline9"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 196.15706,-39.018064"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3039"
+         inkscape:label="RadialGridline10"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 184.77591,-76.536686"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3041"
+         inkscape:label="RadialGridline11"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 166.29392,-111.11405"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3043"
+         inkscape:label="RadialGridline12"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 141.42136,-141.42136"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3045"
+         inkscape:label="RadialGridline13"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 111.11405,-166.29392"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3047"
+         inkscape:label="RadialGridline14"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 76.536686,-184.77591"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3049"
+         inkscape:label="RadialGridline15"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 39.018064,-196.15706"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3051"
+         inkscape:label="RadialGridline16"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 0,-200"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3053"
+         inkscape:label="RadialGridline17"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -39.018064,-196.15706"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3055"
+         inkscape:label="RadialGridline18"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -76.536686,-184.77591"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3057"
+         inkscape:label="RadialGridline19"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -111.11405,-166.29392"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3059"
+         inkscape:label="RadialGridline20"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -141.42136,-141.42136"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3061"
+         inkscape:label="RadialGridline21"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -166.29392,-111.11405"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3063"
+         inkscape:label="RadialGridline22"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -184.77591,-76.536686"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3065"
+         inkscape:label="RadialGridline23"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -196.15706,-39.018064"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3067"
+         inkscape:label="RadialGridline24"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -200,0"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3069"
+         inkscape:label="RadialGridline25"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -196.15706,39.018064"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3071"
+         inkscape:label="RadialGridline26"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -184.77591,76.536686"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3073"
+         inkscape:label="RadialGridline27"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -166.29392,111.11405"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3075"
+         inkscape:label="RadialGridline28"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -141.42136,141.42136"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3077"
+         inkscape:label="RadialGridline29"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -111.11405,166.29392"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3079"
+         inkscape:label="RadialGridline30"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -76.536686,184.77591"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3081"
+         inkscape:label="RadialGridline31"
+         style="fill:none;stroke:#000000;stroke-width:1.82989252"
+         d="M 0,0 -39.018064,196.15706"
+         inkscape:connector-curvature="0" />
+      <circle
+         d="M 2.5,0 C 2.5,1.3807119 1.3807119,2.5 0,2.5 -1.3807119,2.5 -2.5,1.3807119 -2.5,0 c 0,-1.3807119 1.1192881,-2.5 2.5,-2.5 1.3807119,0 2.5,1.1192881 2.5,2.5 z"
+         id="circle3083"
+         inkscape:label="CentreDot"
+         style="fill:#000000;stroke:#000000;stroke-width:0"
+         r="2.5"
+         cy="0"
+         cx="0"
+         sodipodi:cx="0"
+         sodipodi:cy="0"
+         sodipodi:rx="2.5"
+         sodipodi:ry="2.5" />
+    </g>
+  </g>
+</svg>

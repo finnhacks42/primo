@@ -1,0 +1,4 @@
+Motor pins
+left: green forward, blue back
+right: grey forward, purple back
+
