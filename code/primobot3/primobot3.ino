@@ -60,9 +60,7 @@ void setup() {
 
   //initialize aligns the wheels
   initialize();
- // learnThreshold();
-
-  delay(2000);
+  //learnThreshold2();
   Serial.println("INITIALIZED");
 }
 
@@ -71,7 +69,7 @@ void loop() {
   if (mySerial.available()) {
     instruction = mySerial.read();
     Serial.write(instruction);
-  }
+  
 
   //decode instruction
   switch (instruction) {    
@@ -79,17 +77,18 @@ void loop() {
   case FORWARD:
     //initialize();
     //digitalWrite(11, HIGH);
-    forward(128, 16);
+    Serial.println("Going Forward");
+    forward(255, 20);
     break;
 
   case LEFT:
     //initialize();
-    left(128, 8);
+    left(255, 12);
     break;
 
   case RIGHT:
     //initialize();
-    right(138, 7);
+    right(255, 12);
     break;
 
   case INIT:
@@ -103,6 +102,7 @@ void loop() {
   default:
     stop();
     break;
+  }
   }
 }
 

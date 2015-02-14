@@ -1,0 +1,11 @@
+Assume Bluetooth module facing toward you
+A0 - encoder left
+A1 - encoder right
+10 - bluetooth recieve
+16 - bluetooth transmit
+9 -  right enable
+8 -  right forward
+7 -  left forward
+5 -  right reverse
+3 -  left enable
+2 -  left reverse

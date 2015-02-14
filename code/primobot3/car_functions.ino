@@ -1,7 +1,7 @@
 //one wheel is composed of 32 slices
 //16 black and 16 white.
 
-int thresh = 150; //threshold between black and white
+int thresh = 100; //threshold between black and white
 int LEARN_STEPS = 1000;
 
 int toDigital(int a) {
@@ -28,6 +28,35 @@ int median(int a[], int asize){
   int result = a[half];
   return result;
 }
+
+//runs both wheels for x steps
+void learnThreshold2(){
+  int left;
+  int right;
+  
+  Serial.println("STARTING MOTORS");
+  //enable motors
+  digitalWrite(leftEnable, HIGH);
+  digitalWrite(rightEnable, HIGH);
+  //forward left
+  digitalWrite(leftForward, HIGH);
+  digitalWrite(leftReverse, LOW);
+  //forward right
+  digitalWrite(rightForward, HIGH);
+  digitalWrite(rightReverse, LOW);
+ 
+  
+  for (int i = 0; i < LEARN_STEPS; i++){
+    left = analogRead(leftEncoder);
+    right = analogRead(rightEncoder);
+    Serial.print(left);
+    Serial.print(",");
+    Serial.println(right);
+  }
+  stopLeft();
+  stopRight();
+}
+
 
 //runs both wheels for x steps
 void learnThreshold(){
@@ -66,6 +95,19 @@ void learnThreshold(){
   Serial.println(rightMed);
   stopLeft();
   stopRight();
+}
+
+void turn_right_wheel(){
+  Serial.println("RIGHT WHEEL GO");
+  digitalWrite(rightEnable, HIGH);
+  digitalWrite(leftEnable, LOW);
+  
+  digitalWrite(rightForward, HIGH);
+  for (int i = 0; i < 500; i++) {
+     int enc = toDigital(analogRead(rightEncoder));
+     Serial.println(enc); 
+  }
+  digitalWrite(rightForward,LOW);
 }
 
 //rotate wheels until the next sign
@@ -113,142 +155,84 @@ void initialize() {
  
 }
 
-/* MOTION FUNCTIONS */
-
-void backward(int speed, int steps) {
-  int vL, pvL = 0;
-  int vR, pvR = 0;
-
-  int counterL, counterR = 0;
-
-  //right backward
-  digitalWrite(rightForward, LOW);
-  analogWrite(rightReverse, speed);
-
-  //left backward
-  digitalWrite(leftForward, LOW);
-  analogWrite(leftReverse, speed);
-
-
-  while (counterL <= steps && counterR <= steps) {
-    if (counterL <= steps) {
-      vL = toDigital(analogRead(leftEncoder));
-      if (vL != pvL) counterL++;
-      pvL = vL;
-    }
-    if (counterR <= steps) {
-      vR = toDigital(analogRead(rightEncoder));
-      if (vR != pvR) counterR++;
-      pvR = vR;
-    }
-  }
-  stop();
-}
 
 void forward(int speed, int steps) {
-  int vL, pvL = 0;
-  int vR, pvR = 0;
-
-  int counterL, counterR = 0;
-
-  //right forward
-  digitalWrite(rightForward, speed);
-  analogWrite(rightReverse, LOW);
-
-  //left forward
-  digitalWrite(leftForward, speed);
-  analogWrite(leftReverse, LOW);
-
-
-  while (counterL <= steps && counterR <= steps) {
-    if (counterL <= steps) {
-      vL = toDigital(analogRead(leftEncoder));
-      if (vL != pvL) counterL++;
-      pvL = vL;
-    }
-    if (counterR <= steps) {
-      vR =toDigital(analogRead(rightEncoder));
-      if (vR != pvR) counterR++;
-      pvR = vR;
-    }
-  }
-
-  stop();
+ turn(steps,true,true); 
 }
 
 void left(int speed, int steps) {
-  int vL, pvL = 0;
-  int vR, pvR = 0;
-
-  int counterL, counterR = 0;
-
-  //right forward
-  digitalWrite(rightForward, speed);
-  analogWrite(rightReverse, LOW);
-
-  //left backward
-  digitalWrite(leftForward, LOW);
-  analogWrite(leftReverse, speed);
-
-  //count rotation
-  while (counterL <= steps && counterR <= steps) {
-    if (counterL <= steps) {
-      vL = toDigital(analogRead(leftEncoder));
-      if (vL != pvL) counterL++;
-      pvL = vL;
-    }
-    if (counterR <= steps) {
-      vR = toDigital(analogRead(rightEncoder));
-      if (vR != pvR) counterR++;
-      pvR = vR;
-    }
-  }
-
-  stop();
+  turn(steps,false,true);
 }
 
 void right(int speed, int steps) {
+  turn(steps,true,false);
+}
 
-  int vL, pvL = 0;
-  int vR, pvR = 0;
 
-  int counterL = 0, counterR = 0;
-
-  pvL = digitalRead(leftEncoder);
-  pvR = digitalRead(rightEncoder);
-
-  //right reverse
-  digitalWrite(rightForward, LOW);
-  analogWrite(rightReverse, speed);
-
-  //left forward
-  digitalWrite(leftReverse, LOW);
-  analogWrite(leftForward, speed);
-
-  //count rotation
+void turn(int steps, boolean leftIsForward, boolean rightIsForward) {
+  int vL = toDigital(analogRead(leftEncoder));
+  int pvL = toDigital(analogRead(leftEncoder));
+  int vR = toDigital(analogRead(rightEncoder));
+  int pvR = toDigital(analogRead(rightEncoder));
+  int counterL = 0;
+  int counterR = 0;
+  
+  if (leftIsForward){
+    digitalWrite(leftForward, HIGH);
+    digitalWrite(leftReverse, LOW);
+  } else {
+     digitalWrite(leftForward, LOW);
+     digitalWrite(leftReverse, HIGH);
+  }
+  
+  if (rightIsForward){
+    digitalWrite(rightForward, HIGH);
+    digitalWrite(rightReverse, LOW);
+  } else {
+    digitalWrite(rightForward, LOW);
+    digitalWrite(rightReverse, HIGH);
+  }
+  
+  // GO
+  digitalWrite(leftEnable, HIGH);
+  digitalWrite(rightEnable, HIGH);
   while (counterL <= steps || counterR <= steps) {
     if (counterL <= steps) {
       vL = toDigital(analogRead(leftEncoder));
-      if (vL != pvL) counterL++;
-      pvL = vL;
+      if (vL != pvL) {
+        Serial.print("L:");
+        counterL++;
+        Serial.println(counterL);
+        pvL = vL;
+      }
+    } else {
+      stopLeft();
     }
     if (counterR <= steps) {
-      vR = toDigital(analogRead(rightEncoder));
-      if (vR != pvR) counterR++;
-      pvR = vR;
+      vR =toDigital(analogRead(rightEncoder));
+      if (vR != pvR) {
+        Serial.print("R:");
+        counterR++;
+        Serial.println(counterR);
+        pvR = vR;
+      }
+    } else {
+      stopRight(); 
     }
   }
-
-  stop();
 }
+
+
 
 /* STOP FUNCTIONS */
 void stopLeft() {
+  digitalWrite(leftEnable,LOW);
   digitalWrite(leftForward, LOW);
   digitalWrite(leftReverse, LOW);
 }
 
 void stopRight() {
+  digitalWrite(rightEnable,LOW);
   digitalWrite(rightForward, LOW);
   digitalWrite(rightReverse, LOW);
 }

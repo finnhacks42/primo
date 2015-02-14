@@ -1,0 +1,14 @@
+Export test circuit from KICAD and mill that (ie bluetooth test circuit)
+Finish circuit for board and mill it.
+Ensure circuit and wood line designs line up
+Re-cut wood for board (and a good number of tiles)
+Cut acrylic pieces for board
+Bring acrylic paints to the space
+Design bottom of board to screw on (inkscape)
+Breadboard analog multiplexer chip - could simplify things and allow, say a micro, instead of a mega as the arduino. 
+
+
+Possible extensions and crazy ideas
+
+Aternate programming interfaces - create a physical scratch/blocky implementation. Build on clear table with camera at base - detect numbers/colors on base of blocks to determine type. Could be rasberry pi+camera or similar. 
+
