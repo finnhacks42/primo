@@ -30,7 +30,8 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:freetronics_schematic
-EELAYER 27 0
+LIBS:blueboard01-cache
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -605,44 +606,11 @@ F 3 "" H 1500 6450 60  0000 C CNN
 	1    1500 6450
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R37
-U 1 1 54C5F001
-P 950 6450
-F 0 "R37" V 1030 6450 40  0000 C CNN
-F 1 "470" V 957 6451 40  0000 C CNN
-F 2 "~" V 880 6450 30  0000 C CNN
-F 3 "~" H 950 6450 30  0000 C CNN
-	1    950  6450
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R38
-U 1 1 54C5F02C
-P 950 6600
-F 0 "R38" V 1030 6600 40  0000 C CNN
-F 1 "470" V 957 6601 40  0000 C CNN
-F 2 "~" V 880 6600 30  0000 C CNN
-F 3 "~" H 950 6600 30  0000 C CNN
-	1    950  6600
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R39
-U 1 1 54C5F032
-P 950 6750
-F 0 "R39" V 1030 6750 40  0000 C CNN
-F 1 "470" V 957 6751 40  0000 C CNN
-F 2 "~" V 880 6750 30  0000 C CNN
-F 3 "~" H 950 6750 30  0000 C CNN
-	1    950  6750
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  6450 0    60   Input ~ 0
+Text GLabel 1200 6450 0    60   Input ~ 0
 R
-Text GLabel 700  6600 0    60   Input ~ 0
+Text GLabel 1200 6600 0    60   Input ~ 0
 G
-Text GLabel 700  6750 0    60   Input ~ 0
+Text GLabel 1200 6750 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED12
@@ -655,44 +623,11 @@ F 3 "" H 1500 6000 60  0000 C CNN
 	1    1500 6000
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R34
-U 1 1 54C5F22C
-P 950 6000
-F 0 "R34" V 1030 6000 40  0000 C CNN
-F 1 "470" V 957 6001 40  0000 C CNN
-F 2 "~" V 880 6000 30  0000 C CNN
-F 3 "~" H 950 6000 30  0000 C CNN
-	1    950  6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R35
-U 1 1 54C5F232
-P 950 6150
-F 0 "R35" V 1030 6150 40  0000 C CNN
-F 1 "470" V 957 6151 40  0000 C CNN
-F 2 "~" V 880 6150 30  0000 C CNN
-F 3 "~" H 950 6150 30  0000 C CNN
-	1    950  6150
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R36
-U 1 1 54C5F238
-P 950 6300
-F 0 "R36" V 1030 6300 40  0000 C CNN
-F 1 "470" V 957 6301 40  0000 C CNN
-F 2 "~" V 880 6300 30  0000 C CNN
-F 3 "~" H 950 6300 30  0000 C CNN
-	1    950  6300
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  6000 0    60   Input ~ 0
+Text GLabel 1200 6000 0    60   Input ~ 0
 R
-Text GLabel 700  6150 0    60   Input ~ 0
+Text GLabel 1200 6150 0    60   Input ~ 0
 G
-Text GLabel 700  6300 0    60   Input ~ 0
+Text GLabel 1200 6300 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED15
@@ -705,44 +640,11 @@ F 3 "" H 1500 7350 60  0000 C CNN
 	1    1500 7350
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R43
-U 1 1 54C5F24A
-P 950 7350
-F 0 "R43" V 1030 7350 40  0000 C CNN
-F 1 "470" V 957 7351 40  0000 C CNN
-F 2 "~" V 880 7350 30  0000 C CNN
-F 3 "~" H 950 7350 30  0000 C CNN
-	1    950  7350
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R44
-U 1 1 54C5F250
-P 950 7500
-F 0 "R44" V 1030 7500 40  0000 C CNN
-F 1 "470" V 957 7501 40  0000 C CNN
-F 2 "~" V 880 7500 30  0000 C CNN
-F 3 "~" H 950 7500 30  0000 C CNN
-	1    950  7500
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R45
-U 1 1 54C5F256
-P 950 7650
-F 0 "R45" V 1030 7650 40  0000 C CNN
-F 1 "470" V 957 7651 40  0000 C CNN
-F 2 "~" V 880 7650 30  0000 C CNN
-F 3 "~" H 950 7650 30  0000 C CNN
-	1    950  7650
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  7350 0    60   Input ~ 0
+Text GLabel 1200 7350 0    60   Input ~ 0
 R
-Text GLabel 700  7500 0    60   Input ~ 0
+Text GLabel 1200 7500 0    60   Input ~ 0
 G
-Text GLabel 700  7650 0    60   Input ~ 0
+Text GLabel 1200 7650 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED14
@@ -755,44 +657,11 @@ F 3 "" H 1500 6900 60  0000 C CNN
 	1    1500 6900
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R40
-U 1 1 54C5F268
-P 950 6900
-F 0 "R40" V 1030 6900 40  0000 C CNN
-F 1 "470" V 957 6901 40  0000 C CNN
-F 2 "~" V 880 6900 30  0000 C CNN
-F 3 "~" H 950 6900 30  0000 C CNN
-	1    950  6900
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R41
-U 1 1 54C5F26E
-P 950 7050
-F 0 "R41" V 1030 7050 40  0000 C CNN
-F 1 "470" V 957 7051 40  0000 C CNN
-F 2 "~" V 880 7050 30  0000 C CNN
-F 3 "~" H 950 7050 30  0000 C CNN
-	1    950  7050
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R42
-U 1 1 54C5F274
-P 950 7200
-F 0 "R42" V 1030 7200 40  0000 C CNN
-F 1 "470" V 957 7201 40  0000 C CNN
-F 2 "~" V 880 7200 30  0000 C CNN
-F 3 "~" H 950 7200 30  0000 C CNN
-	1    950  7200
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  6900 0    60   Input ~ 0
+Text GLabel 1200 6900 0    60   Input ~ 0
 R
-Text GLabel 700  7050 0    60   Input ~ 0
+Text GLabel 1200 7050 0    60   Input ~ 0
 G
-Text GLabel 700  7200 0    60   Input ~ 0
+Text GLabel 1200 7200 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED16
@@ -805,44 +674,11 @@ F 3 "" H 2950 550 60  0000 C CNN
 	1    2950 550 
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R46
-U 1 1 54C5F286
-P 2400 550
-F 0 "R46" V 2480 550 40  0000 C CNN
-F 1 "470" V 2407 551 40  0000 C CNN
-F 2 "~" V 2330 550 30  0000 C CNN
-F 3 "~" H 2400 550 30  0000 C CNN
-	1    2400 550 
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R47
-U 1 1 54C5F28C
-P 2400 700
-F 0 "R47" V 2480 700 40  0000 C CNN
-F 1 "470" V 2407 701 40  0000 C CNN
-F 2 "~" V 2330 700 30  0000 C CNN
-F 3 "~" H 2400 700 30  0000 C CNN
-	1    2400 700 
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R48
-U 1 1 54C5F292
-P 2400 850
-F 0 "R48" V 2480 850 40  0000 C CNN
-F 1 "470" V 2407 851 40  0000 C CNN
-F 2 "~" V 2330 850 30  0000 C CNN
-F 3 "~" H 2400 850 30  0000 C CNN
-	1    2400 850 
-	0    1    -1   0   
-$EndComp
-Text GLabel 2150 550  0    60   Input ~ 0
+Text GLabel 2650 550  0    60   Input ~ 0
 R
-Text GLabel 2150 700  0    60   Input ~ 0
+Text GLabel 2650 700  0    60   Input ~ 0
 G
-Text GLabel 2150 850  0    60   Input ~ 0
+Text GLabel 2650 850  0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED9
@@ -855,44 +691,11 @@ F 3 "" H 1500 4200 60  0000 C CNN
 	1    1500 4200
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R25
-U 1 1 54C5F2A4
-P 950 4200
-F 0 "R25" V 1030 4200 40  0000 C CNN
-F 1 "470" V 957 4201 40  0000 C CNN
-F 2 "~" V 880 4200 30  0000 C CNN
-F 3 "~" H 950 4200 30  0000 C CNN
-	1    950  4200
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R26
-U 1 1 54C5F2AA
-P 950 4350
-F 0 "R26" V 1030 4350 40  0000 C CNN
-F 1 "470" V 957 4351 40  0000 C CNN
-F 2 "~" V 880 4350 30  0000 C CNN
-F 3 "~" H 950 4350 30  0000 C CNN
-	1    950  4350
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R27
-U 1 1 54C5F2B0
-P 950 4500
-F 0 "R27" V 1030 4500 40  0000 C CNN
-F 1 "470" V 957 4501 40  0000 C CNN
-F 2 "~" V 880 4500 30  0000 C CNN
-F 3 "~" H 950 4500 30  0000 C CNN
-	1    950  4500
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  4200 0    60   Input ~ 0
+Text GLabel 1200 4200 0    60   Input ~ 0
 R
-Text GLabel 700  4350 0    60   Input ~ 0
+Text GLabel 1200 4350 0    60   Input ~ 0
 G
-Text GLabel 700  4500 0    60   Input ~ 0
+Text GLabel 1200 4500 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED11
@@ -905,44 +708,11 @@ F 3 "" H 1500 5550 60  0000 C CNN
 	1    1500 5550
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R31
-U 1 1 54C5F2C2
-P 950 5550
-F 0 "R31" V 1030 5550 40  0000 C CNN
-F 1 "470" V 957 5551 40  0000 C CNN
-F 2 "~" V 880 5550 30  0000 C CNN
-F 3 "~" H 950 5550 30  0000 C CNN
-	1    950  5550
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R32
-U 1 1 54C5F2C8
-P 950 5700
-F 0 "R32" V 1030 5700 40  0000 C CNN
-F 1 "470" V 957 5701 40  0000 C CNN
-F 2 "~" V 880 5700 30  0000 C CNN
-F 3 "~" H 950 5700 30  0000 C CNN
-	1    950  5700
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R33
-U 1 1 54C5F2CE
-P 950 5850
-F 0 "R33" V 1030 5850 40  0000 C CNN
-F 1 "470" V 957 5851 40  0000 C CNN
-F 2 "~" V 880 5850 30  0000 C CNN
-F 3 "~" H 950 5850 30  0000 C CNN
-	1    950  5850
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  5550 0    60   Input ~ 0
+Text GLabel 1200 5550 0    60   Input ~ 0
 R
-Text GLabel 700  5700 0    60   Input ~ 0
+Text GLabel 1200 5700 0    60   Input ~ 0
 G
-Text GLabel 700  5850 0    60   Input ~ 0
+Text GLabel 1200 5850 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED10
@@ -955,44 +725,11 @@ F 3 "" H 1500 5100 60  0000 C CNN
 	1    1500 5100
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R28
-U 1 1 54C5F2E0
-P 950 5100
-F 0 "R28" V 1030 5100 40  0000 C CNN
-F 1 "470" V 957 5101 40  0000 C CNN
-F 2 "~" V 880 5100 30  0000 C CNN
-F 3 "~" H 950 5100 30  0000 C CNN
-	1    950  5100
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R29
-U 1 1 54C5F2E6
-P 950 5250
-F 0 "R29" V 1030 5250 40  0000 C CNN
-F 1 "470" V 957 5251 40  0000 C CNN
-F 2 "~" V 880 5250 30  0000 C CNN
-F 3 "~" H 950 5250 30  0000 C CNN
-	1    950  5250
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R30
-U 1 1 54C5F2EC
-P 950 5400
-F 0 "R30" V 1030 5400 40  0000 C CNN
-F 1 "470" V 957 5401 40  0000 C CNN
-F 2 "~" V 880 5400 30  0000 C CNN
-F 3 "~" H 950 5400 30  0000 C CNN
-	1    950  5400
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  5100 0    60   Input ~ 0
+Text GLabel 1200 5100 0    60   Input ~ 0
 R
-Text GLabel 700  5250 0    60   Input ~ 0
+Text GLabel 1200 5250 0    60   Input ~ 0
 G
-Text GLabel 700  5400 0    60   Input ~ 0
+Text GLabel 1200 5400 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED6
@@ -1005,44 +742,11 @@ F 3 "" H 1500 2850 60  0000 C CNN
 	1    1500 2850
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R16
-U 1 1 54C5F2FE
-P 950 2850
-F 0 "R16" V 1030 2850 40  0000 C CNN
-F 1 "470" V 957 2851 40  0000 C CNN
-F 2 "~" V 880 2850 30  0000 C CNN
-F 3 "~" H 950 2850 30  0000 C CNN
-	1    950  2850
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R17
-U 1 1 54C5F304
-P 950 3000
-F 0 "R17" V 1030 3000 40  0000 C CNN
-F 1 "470" V 957 3001 40  0000 C CNN
-F 2 "~" V 880 3000 30  0000 C CNN
-F 3 "~" H 950 3000 30  0000 C CNN
-	1    950  3000
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R18
-U 1 1 54C5F30A
-P 950 3150
-F 0 "R18" V 1030 3150 40  0000 C CNN
-F 1 "470" V 957 3151 40  0000 C CNN
-F 2 "~" V 880 3150 30  0000 C CNN
-F 3 "~" H 950 3150 30  0000 C CNN
-	1    950  3150
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  2850 0    60   Input ~ 0
+Text GLabel 1200 2850 0    60   Input ~ 0
 R
-Text GLabel 700  3000 0    60   Input ~ 0
+Text GLabel 1200 3000 0    60   Input ~ 0
 G
-Text GLabel 700  3150 0    60   Input ~ 0
+Text GLabel 1200 3150 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED5
@@ -1055,44 +759,11 @@ F 3 "" H 1500 2400 60  0000 C CNN
 	1    1500 2400
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R13
-U 1 1 54C5F31C
-P 950 2400
-F 0 "R13" V 1030 2400 40  0000 C CNN
-F 1 "470" V 957 2401 40  0000 C CNN
-F 2 "~" V 880 2400 30  0000 C CNN
-F 3 "~" H 950 2400 30  0000 C CNN
-	1    950  2400
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R14
-U 1 1 54C5F322
-P 950 2550
-F 0 "R14" V 1030 2550 40  0000 C CNN
-F 1 "470" V 957 2551 40  0000 C CNN
-F 2 "~" V 880 2550 30  0000 C CNN
-F 3 "~" H 950 2550 30  0000 C CNN
-	1    950  2550
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R15
-U 1 1 54C5F328
-P 950 2700
-F 0 "R15" V 1030 2700 40  0000 C CNN
-F 1 "470" V 957 2701 40  0000 C CNN
-F 2 "~" V 880 2700 30  0000 C CNN
-F 3 "~" H 950 2700 30  0000 C CNN
-	1    950  2700
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  2400 0    60   Input ~ 0
+Text GLabel 1200 2400 0    60   Input ~ 0
 R
-Text GLabel 700  2550 0    60   Input ~ 0
+Text GLabel 1200 2550 0    60   Input ~ 0
 G
-Text GLabel 700  2700 0    60   Input ~ 0
+Text GLabel 1200 2700 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED8
@@ -1105,44 +776,11 @@ F 3 "" H 1500 3750 60  0000 C CNN
 	1    1500 3750
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R22
-U 1 1 54C5F33A
-P 950 3750
-F 0 "R22" V 1030 3750 40  0000 C CNN
-F 1 "470" V 957 3751 40  0000 C CNN
-F 2 "~" V 880 3750 30  0000 C CNN
-F 3 "~" H 950 3750 30  0000 C CNN
-	1    950  3750
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R23
-U 1 1 54C5F340
-P 950 3900
-F 0 "R23" V 1030 3900 40  0000 C CNN
-F 1 "470" V 957 3901 40  0000 C CNN
-F 2 "~" V 880 3900 30  0000 C CNN
-F 3 "~" H 950 3900 30  0000 C CNN
-	1    950  3900
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R24
-U 1 1 54C5F346
-P 950 4050
-F 0 "R24" V 1030 4050 40  0000 C CNN
-F 1 "470" V 957 4051 40  0000 C CNN
-F 2 "~" V 880 4050 30  0000 C CNN
-F 3 "~" H 950 4050 30  0000 C CNN
-	1    950  4050
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  3750 0    60   Input ~ 0
+Text GLabel 1200 3750 0    60   Input ~ 0
 R
-Text GLabel 700  3900 0    60   Input ~ 0
+Text GLabel 1200 3900 0    60   Input ~ 0
 G
-Text GLabel 700  4050 0    60   Input ~ 0
+Text GLabel 1200 4050 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED7
@@ -1155,44 +793,11 @@ F 3 "" H 1500 3300 60  0000 C CNN
 	1    1500 3300
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R19
-U 1 1 54C5F358
-P 950 3300
-F 0 "R19" V 1030 3300 40  0000 C CNN
-F 1 "470" V 957 3301 40  0000 C CNN
-F 2 "~" V 880 3300 30  0000 C CNN
-F 3 "~" H 950 3300 30  0000 C CNN
-	1    950  3300
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R20
-U 1 1 54C5F35E
-P 950 3450
-F 0 "R20" V 1030 3450 40  0000 C CNN
-F 1 "470" V 957 3451 40  0000 C CNN
-F 2 "~" V 880 3450 30  0000 C CNN
-F 3 "~" H 950 3450 30  0000 C CNN
-	1    950  3450
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R21
-U 1 1 54C5F364
-P 950 3600
-F 0 "R21" V 1030 3600 40  0000 C CNN
-F 1 "470" V 957 3601 40  0000 C CNN
-F 2 "~" V 880 3600 30  0000 C CNN
-F 3 "~" H 950 3600 30  0000 C CNN
-	1    950  3600
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  3300 0    60   Input ~ 0
+Text GLabel 1200 3300 0    60   Input ~ 0
 R
-Text GLabel 700  3450 0    60   Input ~ 0
+Text GLabel 1200 3450 0    60   Input ~ 0
 G
-Text GLabel 700  3600 0    60   Input ~ 0
+Text GLabel 1200 3600 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED2
@@ -1205,44 +810,11 @@ F 3 "" H 1500 1050 60  0000 C CNN
 	1    1500 1050
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R4
-U 1 1 54C5F376
-P 950 1050
-F 0 "R4" V 1030 1050 40  0000 C CNN
-F 1 "470" V 957 1051 40  0000 C CNN
-F 2 "~" V 880 1050 30  0000 C CNN
-F 3 "~" H 950 1050 30  0000 C CNN
-	1    950  1050
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R5
-U 1 1 54C5F37C
-P 950 1200
-F 0 "R5" V 1030 1200 40  0000 C CNN
-F 1 "470" V 957 1201 40  0000 C CNN
-F 2 "~" V 880 1200 30  0000 C CNN
-F 3 "~" H 950 1200 30  0000 C CNN
-	1    950  1200
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R6
-U 1 1 54C5F382
-P 950 1350
-F 0 "R6" V 1030 1350 40  0000 C CNN
-F 1 "470" V 957 1351 40  0000 C CNN
-F 2 "~" V 880 1350 30  0000 C CNN
-F 3 "~" H 950 1350 30  0000 C CNN
-	1    950  1350
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  1050 0    60   Input ~ 0
+Text GLabel 1200 1050 0    60   Input ~ 0
 R
-Text GLabel 700  1200 0    60   Input ~ 0
+Text GLabel 1200 1200 0    60   Input ~ 0
 G
-Text GLabel 700  1350 0    60   Input ~ 0
+Text GLabel 1200 1350 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED1
@@ -1255,44 +827,11 @@ F 3 "" H 1500 600 60  0000 C CNN
 	1    1500 600 
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R1
-U 1 1 54C5F394
-P 950 600
-F 0 "R1" V 1030 600 40  0000 C CNN
-F 1 "470" V 957 601 40  0000 C CNN
-F 2 "~" V 880 600 30  0000 C CNN
-F 3 "~" H 950 600 30  0000 C CNN
-	1    950  600 
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R2
-U 1 1 54C5F39A
-P 950 750
-F 0 "R2" V 1030 750 40  0000 C CNN
-F 1 "470" V 957 751 40  0000 C CNN
-F 2 "~" V 880 750 30  0000 C CNN
-F 3 "~" H 950 750 30  0000 C CNN
-	1    950  750 
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R3
-U 1 1 54C5F3A0
-P 950 900
-F 0 "R3" V 1030 900 40  0000 C CNN
-F 1 "470" V 957 901 40  0000 C CNN
-F 2 "~" V 880 900 30  0000 C CNN
-F 3 "~" H 950 900 30  0000 C CNN
-	1    950  900 
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  600  0    60   Input ~ 0
+Text GLabel 1200 600  0    60   Input ~ 0
 R
-Text GLabel 700  750  0    60   Input ~ 0
+Text GLabel 1200 750  0    60   Input ~ 0
 G
-Text GLabel 700  900  0    60   Input ~ 0
+Text GLabel 1200 900  0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED4
@@ -1305,44 +844,11 @@ F 3 "" H 1500 1950 60  0000 C CNN
 	1    1500 1950
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R10
-U 1 1 54C5F3B2
-P 950 1950
-F 0 "R10" V 1030 1950 40  0000 C CNN
-F 1 "470" V 957 1951 40  0000 C CNN
-F 2 "~" V 880 1950 30  0000 C CNN
-F 3 "~" H 950 1950 30  0000 C CNN
-	1    950  1950
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R11
-U 1 1 54C5F3B8
-P 950 2100
-F 0 "R11" V 1030 2100 40  0000 C CNN
-F 1 "470" V 957 2101 40  0000 C CNN
-F 2 "~" V 880 2100 30  0000 C CNN
-F 3 "~" H 950 2100 30  0000 C CNN
-	1    950  2100
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R12
-U 1 1 54C5F3BE
-P 950 2250
-F 0 "R12" V 1030 2250 40  0000 C CNN
-F 1 "470" V 957 2251 40  0000 C CNN
-F 2 "~" V 880 2250 30  0000 C CNN
-F 3 "~" H 950 2250 30  0000 C CNN
-	1    950  2250
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  1950 0    60   Input ~ 0
+Text GLabel 1200 1950 0    60   Input ~ 0
 R
-Text GLabel 700  2100 0    60   Input ~ 0
+Text GLabel 1200 2100 0    60   Input ~ 0
 G
-Text GLabel 700  2250 0    60   Input ~ 0
+Text GLabel 1200 2250 0    60   Input ~ 0
 B
 $Comp
 L LED_RGB_COM_A LED3
@@ -1355,44 +861,11 @@ F 3 "" H 1500 1500 60  0000 C CNN
 	1    1500 1500
 	-1   0    0    -1  
 $EndComp
-$Comp
-L R R7
-U 1 1 54C5F3D0
-P 950 1500
-F 0 "R7" V 1030 1500 40  0000 C CNN
-F 1 "470" V 957 1501 40  0000 C CNN
-F 2 "~" V 880 1500 30  0000 C CNN
-F 3 "~" H 950 1500 30  0000 C CNN
-	1    950  1500
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R8
-U 1 1 54C5F3D6
-P 950 1650
-F 0 "R8" V 1030 1650 40  0000 C CNN
-F 1 "470" V 957 1651 40  0000 C CNN
-F 2 "~" V 880 1650 30  0000 C CNN
-F 3 "~" H 950 1650 30  0000 C CNN
-	1    950  1650
-	0    1    -1   0   
-$EndComp
-$Comp
-L R R9
-U 1 1 54C5F3DC
-P 950 1800
-F 0 "R9" V 1030 1800 40  0000 C CNN
-F 1 "470" V 957 1801 40  0000 C CNN
-F 2 "~" V 880 1800 30  0000 C CNN
-F 3 "~" H 950 1800 30  0000 C CNN
-	1    950  1800
-	0    1    -1   0   
-$EndComp
-Text GLabel 700  1500 0    60   Input ~ 0
+Text GLabel 1200 1500 0    60   Input ~ 0
 R
-Text GLabel 700  1650 0    60   Input ~ 0
+Text GLabel 1200 1650 0    60   Input ~ 0
 G
-Text GLabel 700  1800 0    60   Input ~ 0
+Text GLabel 1200 1800 0    60   Input ~ 0
 B
 $Comp
 L RES_PHOTO_LDR R66
@@ -1824,13 +1297,9 @@ F 3 "" H 10600 2050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3250 5650 5850 5650
-Wire Wire Line
 	3250 4200 3250 5650
 Wire Wire Line
 	2900 4200 3250 4200
-Wire Wire Line
-	3200 5750 5850 5750
 Wire Wire Line
 	3200 4250 3200 5750
 Wire Wire Line
@@ -1840,8 +1309,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 1200 2750 1200
 Wire Wire Line
-	3100 5850 5850 5850
-Wire Wire Line
 	3100 4350 3100 5850
 Wire Wire Line
 	2650 4350 3100 4350
@@ -1850,8 +1317,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 1650 2650 1650
 Wire Wire Line
-	3000 5950 5850 5950
-Wire Wire Line
 	3000 4450 3000 5950
 Wire Wire Line
 	2450 4450 3000 4450
@@ -1859,8 +1324,6 @@ Wire Wire Line
 	2450 2100 2450 4450
 Wire Wire Line
 	1700 2100 2450 2100
-Wire Wire Line
-	2950 6050 5850 6050
 Wire Wire Line
 	2950 4500 2950 6050
 Wire Wire Line
@@ -1872,8 +1335,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 4350 1750 4350
 Wire Wire Line
-	2900 6150 5850 6150
-Wire Wire Line
 	2900 4550 2900 6150
 Wire Wire Line
 	2200 4550 2900 4550
@@ -1881,8 +1342,6 @@ Wire Wire Line
 	2200 3000 2200 4550
 Wire Wire Line
 	1700 3000 2200 3000
-Wire Wire Line
-	2800 6250 5850 6250
 Wire Wire Line
 	2800 4600 2800 6250
 Wire Wire Line
@@ -1892,8 +1351,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 3450 2050 3450
 Wire Wire Line
-	2750 6400 5850 6400
-Wire Wire Line
 	2750 4700 2750 6400
 Wire Wire Line
 	1900 4700 2750 4700
@@ -1902,27 +1359,19 @@ Wire Wire Line
 Wire Wire Line
 	1700 3900 1900 3900
 Wire Wire Line
-	2700 6500 5850 6500
-Wire Wire Line
 	2700 4800 2700 6500
 Wire Wire Line
 	1750 4800 2700 4800
 Wire Wire Line
 	1750 4350 1750 4800
 Wire Wire Line
-	2650 6600 5850 6600
-Wire Wire Line
 	2650 5250 2650 6600
 Wire Wire Line
 	1700 5250 2650 5250
 Wire Wire Line
-	2600 6700 5850 6700
-Wire Wire Line
 	2600 5700 2600 6700
 Wire Wire Line
 	1700 5700 2600 5700
-Wire Wire Line
-	8600 6450 7750 6450
 Wire Wire Line
 	8600 7150 8600 6450
 Wire Wire Line
@@ -1932,8 +1381,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 6150 2400 6150
 Wire Wire Line
-	8700 6350 7750 6350
-Wire Wire Line
 	8700 7300 8700 6350
 Wire Wire Line
 	2250 7300 8700 7300
@@ -1942,8 +1389,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 6600 2250 6600
 Wire Wire Line
-	8800 6250 7750 6250
-Wire Wire Line
 	8800 7400 8800 6250
 Wire Wire Line
 	2000 7400 8800 7400
@@ -1951,8 +1396,6 @@ Wire Wire Line
 	2000 7050 2000 7400
 Wire Wire Line
 	1700 7050 2000 7050
-Wire Wire Line
-	8950 6150 7750 6150
 Wire Wire Line
 	8950 7500 8950 6150
 Wire Wire Line
@@ -2091,8 +1534,6 @@ Wire Wire Line
 Wire Wire Line
 	7750 5700 9150 5700
 Wire Wire Line
-	7750 6050 9000 6050
-Wire Wire Line
 	10650 7000 10650 7050
 Wire Wire Line
 	10750 7000 10650 7000
@@ -2175,7 +1616,7 @@ Wire Wire Line
 Wire Wire Line
 	10650 4700 10650 4750
 Wire Wire Line
-	10650 4700 11100 4700
+	11100 4700 10650 4700
 Wire Wire Line
 	10750 4750 10750 4700
 Wire Wire Line
@@ -2183,7 +1624,7 @@ Wire Wire Line
 Wire Wire Line
 	10650 4950 10650 5000
 Wire Wire Line
-	10650 4950 11100 4950
+	11100 4950 10650 4950
 Wire Wire Line
 	10750 5000 10750 4950
 Wire Wire Line
@@ -2191,7 +1632,7 @@ Wire Wire Line
 Wire Wire Line
 	10650 4250 10650 4300
 Wire Wire Line
-	10650 4250 11100 4250
+	11100 4250 10650 4250
 Wire Wire Line
 	10750 4300 10750 4250
 Wire Wire Line
@@ -2199,7 +1640,7 @@ Wire Wire Line
 Wire Wire Line
 	10650 4500 10650 4550
 Wire Wire Line
-	10650 4500 11100 4500
+	11100 4500 10650 4500
 Wire Wire Line
 	10750 4550 10750 4500
 Wire Wire Line
@@ -2215,7 +1656,7 @@ Wire Wire Line
 Wire Wire Line
 	10650 4050 10650 4100
 Wire Wire Line
-	10650 4050 11100 4050
+	11100 4050 10650 4050
 Wire Wire Line
 	10750 4100 10750 4050
 Wire Wire Line
@@ -2232,8 +1673,6 @@ Wire Wire Line
 	3150 4150 3350 4150
 Wire Wire Line
 	3350 4150 3350 5550
-Wire Wire Line
-	3350 5550 5850 5550
 Wire Wire Line
 	4200 700  4200 950 
 Wire Wire Line
@@ -2483,13 +1922,9 @@ Wire Wire Line
 Wire Wire Line
 	9000 7050 9650 7050
 Wire Wire Line
-	7750 5950 9050 5950
-Wire Wire Line
 	9050 5950 9050 6850
 Wire Wire Line
 	9050 6850 9650 6850
-Wire Wire Line
-	7750 5850 9100 5850
 Wire Wire Line
 	9100 5850 9100 6600
 Wire Wire Line
@@ -2722,4 +2157,291 @@ Wire Wire Line
 	11100 6950 10750 6950
 Connection ~ 11100 6800
 Connection ~ 10750 7000
+$Comp
+L TRANSISTOR_NPN Q1
+U 1 1 54DEF0A2
+P 8600 2750
+F 0 "Q1" H 8600 2900 50  0000 R CNN
+F 1 "TRANSISTOR_NPN" H 8650 2550 50  0000 R CNN
+F 2 "" H 8600 2750 60  0000 C CNN
+F 3 "" H 8600 2750 60  0000 C CNN
+	1    8600 2750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TRANSISTOR_NPN Q2
+U 1 1 54DEF287
+P 8600 3250
+F 0 "Q2" H 8600 3400 50  0000 R CNN
+F 1 "TRANSISTOR_NPN" H 8650 3050 50  0000 R CNN
+F 2 "" H 8600 3250 60  0000 C CNN
+F 3 "" H 8600 3250 60  0000 C CNN
+	1    8600 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TRANSISTOR_NPN Q3
+U 1 1 54DEF33F
+P 8600 3750
+F 0 "Q3" H 8600 3900 50  0000 R CNN
+F 1 "TRANSISTOR_NPN" H 8650 3550 50  0000 R CNN
+F 2 "" H 8600 3750 60  0000 C CNN
+F 3 "" H 8600 3750 60  0000 C CNN
+	1    8600 3750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8800 2650 8800 3650
+Wire Wire Line
+	8150 3100 8150 3950
+Wire Wire Line
+	8150 3950 8600 3950
+Wire Wire Line
+	8400 3200 8400 3450
+Wire Wire Line
+	8400 3450 8600 3450
+Wire Wire Line
+	7950 2950 8600 2950
+Text GLabel 8400 2650 0    60   Input ~ 0
+R
+Text GLabel 8400 3150 0    60   Input ~ 0
+G
+Text GLabel 8400 3650 0    60   Input ~ 0
+B
+$Comp
+L GND #PWR021
+U 1 1 54DF1113
+P 8800 3000
+F 0 "#PWR021" H 8800 2750 60  0001 C CNN
+F 1 "GND" H 8800 2850 60  0000 C CNN
+F 2 "" H 8800 3000 60  0000 C CNN
+F 3 "" H 8800 3000 60  0000 C CNN
+	1    8800 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R7
+U 1 1 54E05DFD
+P 5600 6150
+F 0 "R7" V 5680 6150 50  0000 C CNN
+F 1 "220" V 5607 6151 50  0000 C CNN
+F 2 "" V 5530 6150 30  0000 C CNN
+F 3 "" H 5600 6150 30  0000 C CNN
+	1    5600 6150
+	0    1    1    0   
+$EndComp
+$Comp
+L R R8
+U 1 1 54E06D8C
+P 5600 6250
+F 0 "R8" V 5680 6250 50  0000 C CNN
+F 1 "220" V 5607 6251 50  0000 C CNN
+F 2 "" V 5530 6250 30  0000 C CNN
+F 3 "" H 5600 6250 30  0000 C CNN
+	1    5600 6250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R5
+U 1 1 54E06E2A
+P 5600 5950
+F 0 "R5" V 5680 5950 50  0000 C CNN
+F 1 "220" V 5607 5951 50  0000 C CNN
+F 2 "" V 5530 5950 30  0000 C CNN
+F 3 "" H 5600 5950 30  0000 C CNN
+	1    5600 5950
+	0    1    1    0   
+$EndComp
+$Comp
+L R R6
+U 1 1 54E06EB9
+P 5600 6050
+F 0 "R6" V 5680 6050 50  0000 C CNN
+F 1 "220" V 5607 6051 50  0000 C CNN
+F 2 "" V 5530 6050 30  0000 C CNN
+F 3 "" H 5600 6050 30  0000 C CNN
+	1    5600 6050
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 54E074A3
+P 5600 5850
+F 0 "R4" V 5680 5850 50  0000 C CNN
+F 1 "220" V 5607 5851 50  0000 C CNN
+F 2 "" V 5530 5850 30  0000 C CNN
+F 3 "" H 5600 5850 30  0000 C CNN
+	1    5600 5850
+	0    1    1    0   
+$EndComp
+$Comp
+L R R3
+U 1 1 54E07516
+P 5600 5750
+F 0 "R3" V 5680 5750 50  0000 C CNN
+F 1 "220" V 5607 5751 50  0000 C CNN
+F 2 "" V 5530 5750 30  0000 C CNN
+F 3 "" H 5600 5750 30  0000 C CNN
+	1    5600 5750
+	0    1    1    0   
+$EndComp
+$Comp
+L R R2
+U 1 1 54E0758E
+P 5600 5650
+F 0 "R2" V 5680 5650 50  0000 C CNN
+F 1 "220" V 5607 5651 50  0000 C CNN
+F 2 "" V 5530 5650 30  0000 C CNN
+F 3 "" H 5600 5650 30  0000 C CNN
+	1    5600 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L R R1
+U 1 1 54E07603
+P 5600 5550
+F 0 "R1" V 5680 5550 50  0000 C CNN
+F 1 "220" V 5607 5551 50  0000 C CNN
+F 2 "" V 5530 5550 30  0000 C CNN
+F 3 "" H 5600 5550 30  0000 C CNN
+	1    5600 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L R R9
+U 1 1 54E07801
+P 5600 6400
+F 0 "R9" V 5680 6400 50  0000 C CNN
+F 1 "220" V 5607 6401 50  0000 C CNN
+F 2 "" V 5530 6400 30  0000 C CNN
+F 3 "" H 5600 6400 30  0000 C CNN
+	1    5600 6400
+	0    1    1    0   
+$EndComp
+$Comp
+L R R10
+U 1 1 54E078E1
+P 5600 6500
+F 0 "R10" V 5680 6500 50  0000 C CNN
+F 1 "220" V 5607 6501 50  0000 C CNN
+F 2 "" V 5530 6500 30  0000 C CNN
+F 3 "" H 5600 6500 30  0000 C CNN
+	1    5600 6500
+	0    1    1    0   
+$EndComp
+$Comp
+L R R11
+U 1 1 54E07B03
+P 5600 6600
+F 0 "R11" V 5680 6600 50  0000 C CNN
+F 1 "220" V 5607 6601 50  0000 C CNN
+F 2 "" V 5530 6600 30  0000 C CNN
+F 3 "" H 5600 6600 30  0000 C CNN
+	1    5600 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L R R12
+U 1 1 54E07B7C
+P 5600 6700
+F 0 "R12" V 5680 6700 50  0000 C CNN
+F 1 "220" V 5607 6701 50  0000 C CNN
+F 2 "" V 5530 6700 30  0000 C CNN
+F 3 "" H 5600 6700 30  0000 C CNN
+	1    5600 6700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3350 5550 5400 5550
+Connection ~ 5350 5550
+Wire Wire Line
+	3250 5650 5400 5650
+Connection ~ 5350 5650
+Wire Wire Line
+	3200 5750 5350 5750
+Wire Wire Line
+	3100 5850 5350 5850
+Wire Wire Line
+	3000 5950 5350 5950
+Wire Wire Line
+	2950 6050 5350 6050
+Wire Wire Line
+	2900 6150 5350 6150
+Wire Wire Line
+	2800 6250 5350 6250
+Wire Wire Line
+	2750 6400 5350 6400
+Wire Wire Line
+	2700 6500 5350 6500
+Wire Wire Line
+	2650 6600 5350 6600
+Wire Wire Line
+	2600 6700 5350 6700
+$Comp
+L R R16
+U 1 1 54E0A40E
+P 8000 6450
+F 0 "R16" V 8080 6450 50  0000 C CNN
+F 1 "220" V 8007 6451 50  0000 C CNN
+F 2 "" V 7930 6450 30  0000 C CNN
+F 3 "" H 8000 6450 30  0000 C CNN
+	1    8000 6450
+	0    1    1    0   
+$EndComp
+$Comp
+L R R15
+U 1 1 54E0A928
+P 8000 6350
+F 0 "R15" V 8080 6350 50  0000 C CNN
+F 1 "220" V 8007 6351 50  0000 C CNN
+F 2 "" V 7930 6350 30  0000 C CNN
+F 3 "" H 8000 6350 30  0000 C CNN
+	1    8000 6350
+	0    1    1    0   
+$EndComp
+$Comp
+L R R14
+U 1 1 54E0AA74
+P 8000 6250
+F 0 "R14" V 8080 6250 50  0000 C CNN
+F 1 "220" V 8007 6251 50  0000 C CNN
+F 2 "" V 7930 6250 30  0000 C CNN
+F 3 "" H 8000 6250 30  0000 C CNN
+	1    8000 6250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R13
+U 1 1 54E0AAF5
+P 8000 6150
+F 0 "R13" V 8080 6150 50  0000 C CNN
+F 1 "220" V 8007 6151 50  0000 C CNN
+F 2 "" V 7930 6150 30  0000 C CNN
+F 3 "" H 8000 6150 30  0000 C CNN
+	1    8000 6150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8600 6450 8250 6450
+Wire Wire Line
+	8700 6350 8250 6350
+Wire Wire Line
+	8800 6250 8250 6250
+Wire Wire Line
+	8950 6150 8250 6150
+Wire Wire Line
+	9000 6050 7750 6050
+Wire Wire Line
+	9050 5950 7750 5950
+Wire Wire Line
+	9100 5850 7750 5850
+Wire Wire Line
+	7750 3200 8400 3200
+Wire Wire Line
+	7750 3100 8150 3100
+Wire Wire Line
+	7750 3300 7950 3300
+Wire Wire Line
+	7950 3300 7950 2950
+Connection ~ 8350 2950
 $EndSCHEMATC

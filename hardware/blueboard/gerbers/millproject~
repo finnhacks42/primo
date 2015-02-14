@@ -1,0 +1,31 @@
+back=tinytest-B_Cu.gbr
+outline=tinytest-Edge_Cuts.gbr
+drill=tinytest.drl
+
+
+# parameters for isolation routing / engraving / etching
+zwork=-.15
+zsafe=20
+zchange=25
+mill-feed=150
+mill-speed=30000
+extra-passes=2
+
+# parameters for cutting out boards
+cutter-diameter=0.059055118
+zcut=-2
+cut-feed=80
+cut-speed=20000
+cut-infeed=1
+
+# drilling parameters
+zdrill=-2
+drill-feed=80
+drill-speed=20000
+
+offset=0.5
+# generate voronoi regions
+#offset=1.0
+dpi=1000
+#max-deviation=0
+
