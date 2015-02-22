@@ -1,6 +1,6 @@
-back=tinytest-B_Cu.gbr
-outline=tinytest-Edge_Cuts.gbr
-drill=tinytest.drl
+back=blueboard_cnc-B_Cu.gbr
+outline=blueboard_cnc-Edge_Cuts.gbr
+drill=blueboard_cnc.drl
 
 
 # parameters for isolation routing / engraving / etching
