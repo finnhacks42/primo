@@ -1,0 +1,4 @@
+python scripting
+Reference is here: http://ci.kicad-pcb.org/job/kicad-doxygen/ws/build/pcbnew/doxygen-python/html/classpcbnew_1_1wxPoint.html
+Type ls in the console - should show all the board files, schematics etc in the current project folder. Create a python script in the same folder. Then you can import it and call functions on it.
+use reload in the console to pull in fresh changes to the script.

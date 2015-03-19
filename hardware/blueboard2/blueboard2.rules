@@ -1,0 +1,113 @@
+
+(rules PCB blueboard2
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3349)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule In1.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 800.0)
+    (clear 400.2)
+    (clear 400.0 (type smd_to_turn_gap))
+    (clear 600.2 (type default_Power))
+    (clear 100.0 (type smd_smd))
+    (clear 600.2 (type smd_Power))
+    (clear 600.2 (type "kicad_default"_Power))
+    (clear 600.2 (type Power_Power))
+  )
+  (padstack "Via[0-1]_1000:700_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_1000:700_um" "Via[0-1]_1000:700_um" default
+  )
+  (via 
+    "Via[0-1]_1000:700_um-kicad_default" "Via[0-1]_1000:700_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_1000:700_um-Power" "Via[0-1]_1000:700_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_1000:700_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_1000:700_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_1000:700_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 800.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(JP1-Pad1)" "Net-(JP2-Pad1)" "Net-(JP3-Pad1)" "Net-(JP4-Pad1)" "Net-(JP5-Pad1)" "Net-(JP6-Pad1)" "Net-(JP10-Pad1)" "Net-(JP11-Pad1)"
+    "Net-(JP12-Pad1)" "Net-(JP13-Pad1)" "Net-(JP14-Pad1)" "Net-(JP15-Pad1)" "Net-(JP16-Pad1)" "Net-(JP17-Pad1)" "Net-(JP18-Pad1)" "Net-(JP19-Pad1)"
+    "Net-(JP20-Pad1)" "Net-(JP21-Pad1)" R "Net-(LED1-PadA)" G B "Net-(LED2-PadA)" "Net-(LED3-PadA)"
+    "Net-(LED4-PadA)" "Net-(LED5-PadA)" "Net-(LED6-PadA)" "Net-(LED7-PadA)" "Net-(LED8-PadA)" "Net-(LED9-PadA)" "Net-(LED10-PadA)" "Net-(LED11-PadA)"
+    "Net-(LED12-PadA)" "Net-(LED13-PadA)" "Net-(LED14-PadA)" "Net-(LED15-PadA)" "Net-(LED16-PadA)" "Net-(Q1-PadB)" "Net-(Q2-PadB)" "Net-(Q3-PadB)"
+    "Net-(R1-Pad1)" "Net-(R2-Pad1)" "Net-(R3-Pad1)" "Net-(R4-Pad1)" "Net-(R5-Pad1)" "Net-(R6-Pad1)" "Net-(R7-Pad1)" "Net-(R8-Pad1)"
+    "Net-(R9-Pad1)" "Net-(R10-Pad1)" "Net-(R11-Pad1)" "Net-(R12-Pad1)" "Net-(R13-Pad2)" "Net-(R14-Pad2)" "Net-(R15-Pad2)" "Net-(R16-Pad2)"
+    "Net-(R17-Pad2)" "Net-(R49-Pad1)" "Net-(R50-Pad1)" "Net-(R51-Pad1)" "Net-(R52-Pad1)" "Net-(R53-Pad1)" "Net-(R54-Pad1)" "Net-(R55-Pad1)"
+    "Net-(R56-Pad1)" "Net-(R57-Pad1)" "Net-(R58-Pad1)" "Net-(R59-Pad1)" "Net-(R60-Pad1)" "Net-(R61-Pad1)" "Net-(R62-Pad1)" "Net-(R63-Pad1)"
+    "Net-(R64-Pad1)" "Net-(R97-Pad2)" "Net-(SHIELD1-Pad0)" "Net-(SHIELD1-Pad1)" "Net-(SHIELD1-PadAREF)" "Net-(SHIELD1-PadSP1)" "Net-(SHIELD1-PadSP2)" "Net-(SHIELD1-PadSP3)"
+    "Net-(SHIELD1-PadSP4)" "Net-(SHIELD1-PadSP5)" "Net-(SHIELD1-PadSP6)" "Net-(SHIELD1-PadIO_R)" "Net-(SHIELD1-PadNC)" "Net-(SHIELD1-PadSDA)" "Net-(SHIELD1-PadSCL)" "Net-(LDR1-Pad2)"
+    "Net-(LDR2-Pad2)" "Net-(LDR3-Pad2)" "Net-(LDR4-Pad2)" "Net-(LDR5-Pad2)" "Net-(LDR6-Pad2)" "Net-(LDR7-Pad2)" "Net-(LDR8-Pad2)" "Net-(LDR9-Pad2)"
+    "Net-(LDR10-Pad2)" "Net-(LDR11-Pad2)" "Net-(LDR12-Pad2)" "Net-(LDR13-Pad2)" "Net-(LDR14-Pad2)" "Net-(LDR15-Pad2)" "Net-(LDR16-Pad2)" "Net-(HC1-PadSTAT)"
+    "Net-(HC1-PadRX)" "Net-(HC1-PadTX)" "Net-(HC1-PadEN)" "Net-(HC1-PadKEY)" "Net-(JPVIN1-Pad1)" "Net-(D1-PadA)" "Net-(D1-PadK)" "Net-(D2-PadA)"
+    "Net-(D3-PadA)" "Net-(D4-PadA)" "Net-(D5-PadA)" "Net-(D6-PadA)" "Net-(D7-PadA)" "Net-(D8-PadA)" "Net-(D9-PadA)" "Net-(D10-PadA)"
+    "Net-(D11-PadA)" "Net-(D12-PadA)" "Net-(D13-PadA)" "Net-(D14-PadA)" "Net-(D15-PadA)" "Net-(D16-PadA)" "Net-(MOUNT1-Pad1)" "Net-(MOUNT2-Pad1)"
+    "Net-(MOUNT3-Pad1)" "Net-(MOUNT4-Pad1)" "Net-(MOUNT5-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 800.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu)
+    )
+  )
+  (class Power
+    GND 5V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu)
+    )
+  )
+)

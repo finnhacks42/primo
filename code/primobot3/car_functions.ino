@@ -170,10 +170,12 @@ void right(int speed, int steps) {
 
 
 void turn(int steps, boolean leftIsForward, boolean rightIsForward) {
+  Serial.println("CALLED TURN");
   int vL = toDigital(analogRead(leftEncoder));
   int pvL = toDigital(analogRead(leftEncoder));
   int vR = toDigital(analogRead(rightEncoder));
   int pvR = toDigital(analogRead(rightEncoder));
+  
   int counterL = 0;
   int counterR = 0;
   
@@ -196,42 +198,74 @@ void turn(int steps, boolean leftIsForward, boolean rightIsForward) {
   // GO
   digitalWrite(leftEnable, HIGH);
   digitalWrite(rightEnable, HIGH);
-  while (counterL <= steps || counterR <= steps) {
+  
+  unsigned long leftChanged = millis();
+  unsigned long rightChanged = millis();
+  unsigned long time;
+  
+  boolean leftStopped = false;
+  boolean rightStopped = false;
+  
+  while (counterL <= steps || counterR <= steps) {  
+    time = millis();
+    if (time - leftChanged > 500){
+      counterL = steps;
+      Serial.println("Left stalled");
+    }
+    if (time - rightChanged > 500){
+      counterR = steps;
+      Serial.println("Right stalled");
+    }
+    
     if (counterL <= steps) {
       vL = toDigital(analogRead(leftEncoder));
       if (vL != pvL) {
+        leftChanged = millis();
         Serial.print("L:");
         counterL++;
         Serial.println(counterL);
         pvL = vL;
       }
-    } else {
-      stopLeft();
+    } 
+    if (counterL > steps) {
+      if (!leftStopped){
+        leftStopped = true;
+        stopLeft();
+      }
     }
+    
     if (counterR <= steps) {
       vR =toDigital(analogRead(rightEncoder));
       if (vR != pvR) {
+        rightChanged = millis();
         Serial.print("R:");
         counterR++;
         Serial.println(counterR);
         pvR = vR;
       }
-    } else {
-      stopRight(); 
+    } 
+    if (counterR > steps) {
+      if (!rightStopped){
+        rightStopped = true;
+        stopRight();
+      } 
     }
   }
+  Serial.println("FINISHED LOOP");  
 }
 
 
 
 /* STOP FUNCTIONS */
 void stopLeft() {
+  Serial.println("Stop Left");
   digitalWrite(leftEnable,LOW);
   digitalWrite(leftForward, LOW);
   digitalWrite(leftReverse, LOW);
 }
 
 void stopRight() {
+  Serial.println("Stop right");
   digitalWrite(rightEnable,LOW);
   digitalWrite(rightForward, LOW);
   digitalWrite(rightReverse, LOW);

@@ -1,10 +1,6 @@
-update=Sat 14 Mar 2015 17:14:29 AEDT
+update=Sun 15 Mar 2015 11:44:14 AEDT
 version=1
-last_client=eeschema
-[general]
-version=1
-RootSch=
-BoardNm=
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=
@@ -27,9 +23,11 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
-LibDir=/home/finn/apps/kicad/freetronics_kicad_library;/home/finn/programming/hacking/circuits
+LibDir=/home/finn/apps/kicad/freetronics_kicad_library/freetronics_footprints.pretty
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -61,5 +59,4 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=freetronics_schematic
-LibName32=HC05
+LibName31=/home/finn/apps/kicad/freetronics_kicad_library/freetronics_schematic

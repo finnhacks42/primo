@@ -1,10 +1,6 @@
-update=Sat 14 Mar 2015 17:14:29 AEDT
+update=Sun 15 Mar 2015 12:07:40 AEDT
 version=1
-last_client=eeschema
-[general]
-version=1
-RootSch=
-BoardNm=
+last_client=kicad
 [pcbnew]
 version=1
 LastNetListRead=
@@ -27,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=/home/finn/apps/kicad/freetronics_kicad_library;/home/finn/programming/hacking/circuits
