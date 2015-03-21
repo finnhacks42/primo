@@ -11,16 +11,16 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 3349)
+    (start_pass_no 12004)
     (layer_rule F.Cu
       (active on)
-      (preferred_direction horizontal)
+      (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
       (against_preferred_direction_trace_costs 2.0)
     )
     (layer_rule In1.Cu
       (active on)
-      (preferred_direction vertical)
+      (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
       (against_preferred_direction_trace_costs 2.0)
     )
@@ -34,6 +34,8 @@
     (clear 600.2 (type smd_Power))
     (clear 600.2 (type "kicad_default"_Power))
     (clear 600.2 (type Power_Power))
+    (clear 600.2 (type Power_Smaller))
+    (clear 300.2 (type Smaller_Smaller))
   )
   (padstack "Via[0-1]_1000:700_um"
     (shape
@@ -53,6 +55,9 @@
   (via 
     "Via[0-1]_1000:700_um-Power" "Via[0-1]_1000:700_um" Power
   )
+  (via 
+    "Via[0-1]_1000:700_um-Smaller" "Via[0-1]_1000:700_um" Smaller
+  )
   (via_rule
     default "Via[0-1]_1000:700_um"
   )
@@ -61,6 +66,9 @@
   )
   (via_rule
     Power "Via[0-1]_1000:700_um-Power"
+  )
+  (via_rule
+    Smaller "Via[0-1]_1000:700_um-Smaller"
   )
   (class default
     (clearance_class default)
@@ -83,13 +91,16 @@
     "Net-(R17-Pad2)" "Net-(R49-Pad1)" "Net-(R50-Pad1)" "Net-(R51-Pad1)" "Net-(R52-Pad1)" "Net-(R53-Pad1)" "Net-(R54-Pad1)" "Net-(R55-Pad1)"
     "Net-(R56-Pad1)" "Net-(R57-Pad1)" "Net-(R58-Pad1)" "Net-(R59-Pad1)" "Net-(R60-Pad1)" "Net-(R61-Pad1)" "Net-(R62-Pad1)" "Net-(R63-Pad1)"
     "Net-(R64-Pad1)" "Net-(R97-Pad2)" "Net-(SHIELD1-Pad0)" "Net-(SHIELD1-Pad1)" "Net-(SHIELD1-PadAREF)" "Net-(SHIELD1-PadSP1)" "Net-(SHIELD1-PadSP2)" "Net-(SHIELD1-PadSP3)"
-    "Net-(SHIELD1-PadSP4)" "Net-(SHIELD1-PadSP5)" "Net-(SHIELD1-PadSP6)" "Net-(SHIELD1-PadIO_R)" "Net-(SHIELD1-PadNC)" "Net-(SHIELD1-PadSDA)" "Net-(SHIELD1-PadSCL)" "Net-(LDR1-Pad2)"
-    "Net-(LDR2-Pad2)" "Net-(LDR3-Pad2)" "Net-(LDR4-Pad2)" "Net-(LDR5-Pad2)" "Net-(LDR6-Pad2)" "Net-(LDR7-Pad2)" "Net-(LDR8-Pad2)" "Net-(LDR9-Pad2)"
-    "Net-(LDR10-Pad2)" "Net-(LDR11-Pad2)" "Net-(LDR12-Pad2)" "Net-(LDR13-Pad2)" "Net-(LDR14-Pad2)" "Net-(LDR15-Pad2)" "Net-(LDR16-Pad2)" "Net-(HC1-PadSTAT)"
-    "Net-(HC1-PadRX)" "Net-(HC1-PadTX)" "Net-(HC1-PadEN)" "Net-(HC1-PadKEY)" "Net-(JPVIN1-Pad1)" "Net-(D1-PadA)" "Net-(D1-PadK)" "Net-(D2-PadA)"
-    "Net-(D3-PadA)" "Net-(D4-PadA)" "Net-(D5-PadA)" "Net-(D6-PadA)" "Net-(D7-PadA)" "Net-(D8-PadA)" "Net-(D9-PadA)" "Net-(D10-PadA)"
-    "Net-(D11-PadA)" "Net-(D12-PadA)" "Net-(D13-PadA)" "Net-(D14-PadA)" "Net-(D15-PadA)" "Net-(D16-PadA)" "Net-(MOUNT1-Pad1)" "Net-(MOUNT2-Pad1)"
-    "Net-(MOUNT3-Pad1)" "Net-(MOUNT4-Pad1)" "Net-(MOUNT5-Pad1)"
+    "Net-(SHIELD1-PadSP4)" "Net-(SHIELD1-PadSP5)" "Net-(SHIELD1-PadSP6)" "Net-(SHIELD1-PadIO_R)" "Net-(SHIELD1-PadNC)" "Net-(SHIELD1-PadSDA)" "Net-(SHIELD1-PadSCL)" "Net-(LDR2-Pad2)"
+    "Net-(LDR4-Pad2)" "Net-(LDR5-Pad2)" "Net-(LDR6-Pad2)" "Net-(LDR7-Pad2)" "Net-(LDR8-Pad2)" "Net-(LDR9-Pad2)" "Net-(LDR11-Pad2)" "Net-(LDR12-Pad2)"
+    "Net-(LDR13-Pad2)" "Net-(LDR14-Pad2)" "Net-(LDR15-Pad2)" "Net-(LDR16-Pad2)" "Net-(HC1-PadSTAT)" "Net-(HC1-PadRX)" "Net-(HC1-PadTX)" "Net-(HC1-PadEN)"
+    "Net-(HC1-PadKEY)" "Net-(JPVIN1-Pad1)" "Net-(D1-PadA)" "Net-(D2-PadA)" "Net-(D3-PadA)" "Net-(D4-PadA)" "Net-(D5-PadA)" "Net-(D6-PadA)"
+    "Net-(D7-PadA)" "Net-(D8-PadA)" "Net-(D9-PadA)" "Net-(D10-PadA)" "Net-(D11-PadA)" "Net-(D12-PadA)" "Net-(D13-PadA)" "Net-(D14-PadA)"
+    "Net-(D15-PadA)" "Net-(D16-PadA)" "Net-(MOUNT1-Pad1)" "Net-(MOUNT2-Pad1)" "Net-(MOUNT3-Pad1)" "Net-(MOUNT4-Pad1)" "Net-(BB3-Pad1)" "Net-(BB3-Pad3)"
+    "Net-(BB3-Pad5)" "Net-(BB3-Pad7)" "Net-(BB3-Pad10)" "Net-(BB3-Pad11)" "Net-(BB3-Pad13)" "Net-(BB3-Pad15)" "Net-(BB4-Pad1)" "Net-(BB4-Pad3)"
+    "Net-(BB4-Pad5)" "Net-(BB4-Pad7)" "Net-(BB4-Pad10)" "Net-(BB4-Pad11)" "Net-(BB4-Pad13)" "Net-(BB4-Pad15)" "Net-(BB5-Pad1)" "Net-(BB5-Pad3)"
+    "Net-(BB5-Pad5)" "Net-(BB5-Pad7)" "Net-(BB5-Pad10)" "Net-(BB5-Pad11)" "Net-(BB5-Pad13)" "Net-(BB5-Pad15)" "Net-(BB6-Pad1)" "Net-(BB6-Pad3)"
+    "Net-(BB6-Pad5)" "Net-(BB6-Pad7)" "Net-(BB6-Pad10)" "Net-(BB6-Pad11)" "Net-(BB6-Pad13)" "Net-(BB6-Pad15)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
@@ -105,6 +116,17 @@
     (via_rule Power)
     (rule
       (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu)
+    )
+  )
+  (class Smaller
+    "Net-(LDR1-Pad2)" "Net-(LDR3-Pad2)" "Net-(LDR10-Pad2)"
+    (clearance_class Smaller)
+    (via_rule Smaller)
+    (rule
+      (width 500.0)
     )
     (circuit 
       (use_layer F.Cu In1.Cu)

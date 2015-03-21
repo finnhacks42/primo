@@ -1,4 +1,46 @@
-Cmp-Mod V01 Created by Cvpcb 0.201502231246+5447~21~ubuntu14.04.1-product   date = Mon 16 Mar 2015 19:27:34 AEDT
+Cmp-Mod V01 Created by Cvpcb 0.201502231246+5447~21~ubuntu14.04.1-product   date = Sat 21 Mar 2015 16:01:18 AEDT
+
+BeginCmp
+TimeStamp = /550C20D6;
+Reference = BB1;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
+
+BeginCmp
+TimeStamp = /550C287D;
+Reference = BB2;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
+
+BeginCmp
+TimeStamp = /550C29C1;
+Reference = BB3;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
+
+BeginCmp
+TimeStamp = /550C2A83;
+Reference = BB4;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
+
+BeginCmp
+TimeStamp = /550CCFD8;
+Reference = BB5;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
+
+BeginCmp
+TimeStamp = /550CCFDE;
+Reference = BB6;
+ValeurCmp = M02X08;
+IdModule  = Freetronics:2X8;
+EndCmp
 
 BeginCmp
 TimeStamp = /550FB2FF;
@@ -11,112 +53,112 @@ BeginCmp
 TimeStamp = /54C5D1C3;
 Reference = D1;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D0A5;
 Reference = D2;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5CE94;
 Reference = D3;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D0D1;
 Reference = D4;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D0BB;
 Reference = D5;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D0FD;
 Reference = D6;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D0E7;
 Reference = D7;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D129;
 Reference = D8;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D113;
 Reference = D9;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D155;
 Reference = D10;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D13F;
 Reference = D11;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D181;
 Reference = D12;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D16B;
 Reference = D13;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D1AD;
 Reference = D14;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D197;
 Reference = D15;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
 TimeStamp = /54C5D1D9;
 Reference = D16;
 ValeurCmp = LED;
-IdModule  = Freetronics:LED-5MM;
+IdModule  = finn_kicad:LED-5MM;
 EndCmp
 
 BeginCmp
@@ -285,6 +327,13 @@ TimeStamp = /550F4E65;
 Reference = JPG4;
 ValeurCmp = M01;
 IdModule  = Freetronics:1X01;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D02A5;
+Reference = JPPIN1;
+ValeurCmp = M02;
+IdModule  = Freetronics:1X02;
 EndCmp
 
 BeginCmp
