@@ -2983,7 +2983,7 @@ Wire Wire Line
 Text GLabel 11100 4850 0    60   Input ~ 0
 GND
 Wire Wire Line
-	9500 3100 9300 3100
+	9300 3100 9600 3100
 Connection ~ 9350 3100
 Text GLabel 9300 2700 0    60   Input ~ 0
 GND
@@ -3001,4 +3001,21 @@ F 3 "" H 9350 2700 60  0000 C CNN
 	1    9350 2700
 	-1   0    0    1   
 $EndComp
+$Comp
+L M02 JPPIN
+U 1 1 550D02A5
+P 9600 3500
+F 0 "JPPIN" H 9500 3600 50  0000 C CNN
+F 1 "M02" H 9500 3300 40  0000 C CNN
+F 2 "" H 9600 3500 60  0000 C CNN
+F 3 "" H 9600 3500 60  0000 C CNN
+	1    9600 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9500 3200 8800 3200
+Connection ~ 8800 3200
+Wire Wire Line
+	9600 3100 9600 3200
+Connection ~ 9500 3100
 $EndSCHEMATC
