@@ -1,4 +1,4 @@
-update=Sun 15 Mar 2015 12:07:40 AEDT
+update=Mon 04 May 2015 14:31:34 AEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,9 +25,19 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
-LibDir=/home/finn/apps/kicad/freetronics_kicad_library;/home/finn/programming/hacking/circuits
+LibDir=/home/finn/programming/hacking/circuits;/home/finn/programming/hacking/circuits/freetronics_kicad_library
 [eeschema/libraries]
 LibName1=power
 LibName2=device
