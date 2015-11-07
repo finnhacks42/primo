@@ -1,14 +1,18 @@
+// This script tests the RGB leds. 
+// If all is going well, they should come on in order for half a second each. The first time round, all in red, then all in green, then all in blue.
+// If a single/few LEDs do not work, check their connectivity on the PCB with a multimeter.
+// If any color does not work at all, check the correponding transistor. 
 
 int indx=0;
-int red = 2;
-int green = 3;
-int blue = 4;
+int red = 9;
+int green = 8;
+int blue = 7;
 
 int timeOn = 500;
 int timeOff = 300;
 
 
-int leds[] = {46,33,29,31,49,48,44,42,38,40,36,47,22,24,26,34};
+int leds[] = {36,40,44,48,47,43,39,35,34,38,42,46,49,37,41,45};
 
 int colors[] = {red,green,blue};
 int cIndx=0;
