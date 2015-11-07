@@ -13,6 +13,7 @@ void setup()
   delay(1000);
   mySerial.begin(9600);
   pinMode(LED, OUTPUT);
+  Serial.println("READY");
 }
 
 void loop() // run over and over
