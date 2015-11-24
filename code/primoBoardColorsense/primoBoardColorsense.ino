@@ -1,16 +1,16 @@
-int red = 2;
-int green = 3;
-int blue = 4;
-
-//int leds[] = {22,24,26,34,38,40,36,47,42,44,48,49,46,33,29,31};  
-//int inputs[] = {A3,A4,A5,A6,A2,A1,A0,A7,A14,A15,A8,A9,A13,A12,A11,A10};
+// This script should be loaded onto your board when you run the python script to learn the color responce for each tile.
 
 
-int leds[] = {46,33,29,31,49,48,44,42,38,40,36,47,22,24,26,34};
-int inputs[] = {A13,A12,A11,A10,A9,A8,A15,A14,A2,A1,A0,A7,A3,A4,A5,A6};
+int red = 9;
+int green = 8;
+int blue = 7;
+
+int leds[] = {36,40,44,48,47,43,39,35,34,38,42,46,49,37,41,45};
+int ldrs[] = {A8,A2,A9,A1,A3,A11,A0,A10,A12,A4,A13,A5,A14,A6,A15,A7};
+int redLeds[] =  {30,26,22,18,19,23,27,31,32,28,24,20,33,29,25,21};
 
 int colors[] = {red,green,blue};
-int up_d = 20; // time to leave led on before reading value
+int up_d = 30; // time to leave led on before reading value
 int down_d = 300; //time to turn off before reading next value
   
 void setup(){
@@ -20,16 +20,20 @@ void setup(){
     pinMode(green, OUTPUT);
     for (int i = 0; i < 16; i++){
       pinMode(leds[i],OUTPUT);
-    }  
+      pinMode(redLeds[i],OUTPUT);
+      digitalWrite(redLeds[i],HIGH);
+      pinMode(ldrs[i],INPUT);
+    }
+    off();  
 }
-  
-  
-// can read all red ones, then all blue, then all green - as fast as possible without delay.   
-  
+  // each time round, outputs a comma seperated row of 16*4 values.
+  // first 16 are ldrs with rgb led off
+  // 2nd 16 are ldrs with rgb=red
+  // 3rd 16 are ldrs with rgb=green
+  // final 16 are ldrs with rbg=blue  
 void loop() {
   
-  // read the LDRs with everything off
-  readLDRs();
+  readLDRs(); 
   for (int c = 0; c < 3; c ++) { 
       int color = colors[c];
       colorOn(color);     
@@ -43,7 +47,7 @@ void loop() {
 
 void readLDRs(){
     for (int i = 0; i < 16; i++) {
-      int input = inputs[i];
+      int input = ldrs[i];
       int value = analogRead(input);
       Serial.print(value);
       Serial.print(",");
@@ -75,7 +79,7 @@ int read(int indx, int color){
     digitalWrite(color,HIGH);
     digitalWrite(leds[indx],HIGH);
     delay(up_d);
-    int value = analogRead(inputs[indx]);
+    int value = analogRead(ldrs[indx]);
     return value;
 }
   
