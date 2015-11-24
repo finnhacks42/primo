@@ -1,4 +1,4 @@
-
+import math
 def find_port():
     try:
         import serial
@@ -20,11 +20,12 @@ def find_port():
 def subtract_background(values,background):
     return [i - j for i, j in zip(values, background)]
 
-def read_from_board(samples,max_attempts,color_function,tile_indices,results):
+def read_from_board(samples,color_function,tile_indices,results):
     """Reads specified number of samples from the specified indices and adds to results"""
     ser.flushInput()
     n = 0
     attempts = 0
+    max_attempts = samples*1.2 # allow some serial corruption
     while (n < samples):
         attempts +=1
         if attempts > max_attempts:
@@ -51,17 +52,25 @@ def read_from_board(samples,max_attempts,color_function,tile_indices,results):
                 results.append(output)
 
 
-def write_results(filename,samples,color_names,results):
+def write_results(filename,results):
     with open(filename,"w") as o:
-        o.write("# samples per position:"+str(samples)+"\n")
-        o.write("# color names:"+",".join(color_names)+"\n")
+        o.write("red,green,blue,off,position,color\n")
         for row in results:
             o.write(",".join([str(x) for x in row])+"\n")
             
 
 
-def read_results(f):
-    pass
+def read_results(filename):
+    results = []
+    with open(filename,"r") as f:
+        f.readline()
+        for line in f.readlines():
+            row = line.strip("\n").split(",")
+            for i in range(5):
+                row[i] = int(row[i])
+            results.append(row)
+    return results
+        
 
 
 def configurations(color_list):
@@ -73,18 +82,41 @@ def configurations(color_list):
         result.append(colors)
     return result
 
+def separation(centers1,centers2):
+    """ Each centers is a list of tuples where the first value is the mean and the second is the uncertainty"""
+    if len(centers1) != len(centers2):
+        raise Exception("cannot calculate seperation between lists of different lenghts")
+    u1 = max([c[1] for c in centers1])
+    u2 = max([c[1] for c in centers2])
+    z = zip(centers1,centers2)
+    
+    d = math.sqrt(sum([pow(x[0][0] - x[1][0],2) for x in z]))
+    return d - u1 - u2
+    
 
-def matrix_apply(data,columns,groupby,function):
-    """ data is a list of lists. groupby is indices, columns is indicies, groups rows by groupby columns, then applies aggregator function on each specified column."""
+def group_data(results,columns,groupby):
     m = {}
-    for row in data:
+    for row in results:
         key = ",".join([str(row[i]) for i in groupby])
         if key not in m:
             m[key]= [[] for i in columns]
         for indx,i in enumerate(columns):
             m[key][indx].append(row[i])
-
-    for key,value in m:
-        m[key] = [function(lst) for lst in m[key]]
-
     return m
+
+def apply_to_group(group,function):
+    m = {}
+    for key,value in group.iteritems():
+        m[key] = [function(lst) for lst in value]
+    return m
+
+def mean(lst):
+    return sum(lst)/float(len(lst))
+     
+def mean_plus_minus(lst):
+    m = mean(lst)
+    d1 = max(lst) - m
+    d2 = m - min(lst)
+    return (int(round(m)),int(round(max(d1,d2))))
+
+
