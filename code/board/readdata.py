@@ -7,7 +7,7 @@ import sys
 It will warn you if any of positions on the board cannot distinguish particular colors
 and will then print out the data you need to paste into the top of your Arduino script"""
 
-SAMPLES_PER_POSITION = 10 # this is the number of data points that will be taken for each setting of the board.
+SAMPLES_PER_POSITION = 5 # this is the number of data points that will be taken for each setting of the board.
 BAUDRATE = 9600 # The baudrate to read data from the serial port on. Should match that set in your Arduino enviroment.
 COLORS = ["blue","red","green","yellow"] # A list of all the different color tiles you are using.
 OUTPUT_TO_FILE = True # If True, the data will be written out to a timestamped file in the data directory 'board_response_dataYYYYmmddHHMM.csv'
@@ -15,16 +15,17 @@ OUTPUT_TO_FILE = True # If True, the data will be written out to a timestamped f
 def read_board_data():
     configs = configurations(COLORS)
     port = find_port()
+    print "Reading from ",port
     ser = serial.Serial(port,BAUDRATE)
     try:
         results = []
         for config in configs:
             config_string = ",".join(config)
-            raw_input("Please set board to configuration: {}. Press any key to continue".format(config_string))
+            raw_input("PLEASE SET BOARD TO CONFIGURATION: {}. Press any key to continue".format(config_string))
             for order in range(4):
                 if order > 0:
-                    raw_input("Please shuffle tiles within current color configuration. Press any key to continue")
-                read_from_board(SAMPLES_PER_POSITION,lambda tile:config[tile/4],range(16),results)
+                    raw_input("shuffle tiles. Press any key to continue")
+                read_from_board(SAMPLES_PER_POSITION,lambda tile:config[tile/4],range(16),results,ser)
     finally:
        ser.close()
 
@@ -72,28 +73,51 @@ def calculate_seperations(centers):
                     seps[tile].append(v1[0]+"-"+v2[0]+", "+str(s).ljust(3))
     return (failed,seps)
 
-def print_center_data(centers):
+def print_data(centers,results):
+    darks = apply_to_group(group_data(results,[3],[4]),lambda x:max(x)+20 ) #lambda x: max([max(x)+5,30])
+    
+    result = []
+    for tile in range(16):
+        result.append(str(int(round(darks[str(tile)][0]))))
+
+    print "Paste the following into the top of the RobotControl Arduino script\n"
+    print "int dark[] = {"+",".join(result)+"};"
+   
+    
     tmp = []
     for tile in range(16):
         tile_vals = []
         for color in COLORS:
-            rgb = "{"+ ",".join([str(int(round(x))) for x in centers[str(tile)+","+color]])+"}"
+            rgb =  ",".join([str(int(round(x))) for x in centers[str(tile)+","+color]])
             tile_vals.append(rgb)
-        tile_vals = "{"+",".join(tile_vals)+"}"
+        tile_vals = ",".join(tile_vals)
         tmp.append(tile_vals)
-    print "Paste the following into the top of the Arduino script\n"
-    print "int centers[16][4][4] = {"+",".join(tmp)+"};"
+    print "-----------\n"
+    print COLORS
+    print tmp[0]
+    print "-----------\n"
+   
+    print "int centers[] = {"+",".join(tmp)+"};"
+    
+   
 
-
+    
 if len(sys.argv) == 1:
     results = read_board_data()
 else:
     results = read_results(sys.argv[1])
 
+#results = read_results("data/board_response_data201512121125.csv")
 
 by_tile_color = group_data(results,range(3),[4,5])
 centers_with_uncert = apply_to_group(by_tile_color,mean_plus_minus)
 failed,seperations = calculate_seperations(centers_with_uncert)
 print_seperation_information(failed,seperations)
 centers = apply_to_group(by_tile_color,mean)
-print_center_data(centers)
+print_data(centers,results)
+
+
+
+
+
+

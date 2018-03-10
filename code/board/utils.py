@@ -20,7 +20,7 @@ def find_port():
 def subtract_background(values,background):
     return [i - j for i, j in zip(values, background)]
 
-def read_from_board(samples,color_function,tile_indices,results):
+def read_from_board(samples,color_function,tile_indices,results,ser):
     """Reads specified number of samples from the specified indices and adds to results"""
     ser.flushInput()
     n = 0
@@ -41,14 +41,19 @@ def read_from_board(samples,color_function,tile_indices,results):
         
         if len(row) == 16*4:
             n +=1
-            # The first 16 are with everything off, next red, then green, then blue.
-            off = row[0:16]
-            red = subtract_background(row[16:16*2],off)
-            green = subtract_background(row[16*2:16*3],off)
-            blue = subtract_background(row[16*3:],off)
+            # each row is rgbo for each tile
+            #off = row[0:16]
+            #red = subtract_background(row[16:16*2],off)
+            #green = subtract_background(row[16*2:16*3],off)
+            #blue = subtract_background(row[16*3:],off)
             for tile in tile_indices:
                 color = color_function(tile)
-                output = [red[tile],blue[tile],green[tile],off[tile],tile,color]
+                off = row[tile*4+3]
+                red = row[tile*4]-off
+                green = row[tile*4+1]-off
+                blue = row[tile*4+2]-off
+                output = [red,green,blue,off,tile,color]
+                #output = [red[tile],blue[tile],green[tile],off[tile],tile,color]
                 results.append(output)
 
 

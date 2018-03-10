@@ -1,0 +1,68 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:finn_schematic
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ARDUINO_PRO_MICRO ARD?
+U 1 1 56C7EFD0
+P 9600 1850
+F 0 "ARD?" H 9600 1750 50  0000 C CNN
+F 1 "ARDUINO_PRO_MICRO" H 9600 1950 50  0000 C CNN
+F 2 "MODULE" H 9600 1850 50  0001 C CNN
+F 3 "DOCUMENTATION" H 9600 1850 50  0001 C CNN
+	1    9600 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L HC05_32 U?
+U 1 1 56C7F2A7
+P 7750 1550
+F 0 "U?" H 7750 1450 50  0000 C CNN
+F 1 "HC05_32" H 7750 1650 50  0000 C CNN
+F 2 "MODULE" H 7750 1550 50  0001 C CNN
+F 3 "DOCUMENTATION" H 7750 1550 50  0001 C CNN
+	1    7750 1550
+	-1   0    0    1   
+$EndComp
+$EndSCHEMATC
