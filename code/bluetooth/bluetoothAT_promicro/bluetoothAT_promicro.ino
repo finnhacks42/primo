@@ -15,10 +15,7 @@
 //  the Arduino will relay it to the bluetooth module and display the result.
 //
  
- 
-#include <SoftwareSerial.h>
-SoftwareSerial BTserial(8, 9); // RX | TX
- 
+  
 const long baudRate = 9600; 
 char c=' ';
 boolean NL = true;
@@ -30,7 +27,7 @@ void setup()
     Serial.print("Uploaded: ");   Serial.println(__DATE__);
     Serial.println(" ");
  
-    BTserial.begin(baudRate);  
+    Serial1.begin(baudRate);  
     Serial.print("BTserial started at "); Serial.println(baudRate);
     Serial.println(" ");
 }
@@ -39,9 +36,9 @@ void loop()
 {
  
     // Read from the Bluetooth module and send to the Arduino Serial Monitor
-    if (BTserial.available())
+    if (Serial1.available())
     {
-        c = BTserial.read();
+        c = Serial1.read();
         Serial.write(c);
     }
  
@@ -50,7 +47,7 @@ void loop()
     if (Serial.available())
     {
         c = Serial.read();
-        BTserial.write(c);   
+        Serial1.write(c);   
  
         // Echo the user input to the main window. The ">" character indicates the user entered text.
         if (NL) { Serial.print(">");  NL = false; }

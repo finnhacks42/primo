@@ -7,32 +7,57 @@ import sys
 It will warn you if any of positions on the board cannot distinguish particular colors
 and will then print out the data you need to paste into the top of your Arduino script"""
 
-SAMPLES_PER_POSITION = 5 # this is the number of data points that will be taken for each setting of the board.
+
+SAMPLES_PER_POSITION = 10 # this is the number of data points that will be taken for each setting of the board.
 BAUDRATE = 9600 # The baudrate to read data from the serial port on. Should match that set in your Arduino enviroment.
 COLORS = ["blue","red","green","yellow"] # A list of all the different color tiles you are using.
 OUTPUT_TO_FILE = True # If True, the data will be written out to a timestamped file in the data directory 'board_response_dataYYYYmmddHHMM.csv'
 
+
+def read_blocks(samples,ser,f):
+    """Reads specified number of samples from the specified indices and adds to results"""
+    ser.flushInput()
+    n = 0
+    results = []
+    attempts = 0
+    max_attempts = samples*1.2 # allow some serial corruption
+    while (n < samples):
+        attempts +=1
+        if attempts > max_attempts:
+            raise Exception("Maximum number of attempted samples exceeded")
+        
+        chars = ser.readline()
+        data = chars.strip().strip(",")
+        
+        try:
+            row = [int(x) for x in data.split(",")] # each row should be 16*4 long.
+        except ValueError:
+            continue
+        
+        if len(row) == 16*4:
+            n +=1
+            results.append(row)
+            f.write(",".join([str(x) for x in row]))
+            f.write("\n")
+            print "result written",results
+        return results
+            
+
+
 def read_board_data():
     configs = configurations(COLORS)
     port = find_port()
+    filename = "data/board_response_data"+dt.strftime(dt.now(),'%Y%m%d%H%M')+".csv"
     print "Reading from ",port
-    ser = serial.Serial(port,BAUDRATE)
-    try:
-        results = []
+    with serial.Serial(port,BAUDRATE) as ser, open(filename,'wb') as outFile:
         for config in configs:
             config_string = ",".join(config)
             raw_input("PLEASE SET BOARD TO CONFIGURATION: {}. Press any key to continue".format(config_string))
-            for order in range(4):
-                if order > 0:
-                    raw_input("shuffle tiles. Press any key to continue")
-                read_from_board(SAMPLES_PER_POSITION,lambda tile:config[tile/4],range(16),results,ser)
-    finally:
-       ser.close()
-
-    if OUTPUT_TO_FILE:
-        filename = "data/board_response_data"+dt.strftime(dt.now(),'%Y%m%d%H%M')+".csv"
-        write_results(filename,results)       
-    return results
+            read_blocks(SAMPLES_PER_POSITION,ser,outFile)
+                #for order in range(4):
+                #    if order > 0:
+                #        raw_input("shuffle tiles. Press any key to continue")
+                #    results.extend(read_raw_data_from_board(SAMPLES_PER_POSITION,ser))#read_from_board(SAMPLES_PER_POSITION,lambda tile:config[tile/4],range(16),results,ser)           
 
 def print_seperation_information(failed,seps):
     if len(failed) > 0:
@@ -109,12 +134,12 @@ else:
 
 #results = read_results("data/board_response_data201512121125.csv")
 
-by_tile_color = group_data(results,range(3),[4,5])
-centers_with_uncert = apply_to_group(by_tile_color,mean_plus_minus)
-failed,seperations = calculate_seperations(centers_with_uncert)
-print_seperation_information(failed,seperations)
-centers = apply_to_group(by_tile_color,mean)
-print_data(centers,results)
+#by_tile_color = group_data(results,range(3),[4,5])
+#centers_with_uncert = apply_to_group(by_tile_color,mean_plus_minus)
+#failed,seperations = calculate_seperations(centers_with_uncert)
+#print_seperation_information(failed,seperations)
+#centers = apply_to_group(by_tile_color,mean)
+#print_data(centers,results)
 
 
 

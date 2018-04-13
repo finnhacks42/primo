@@ -1,7 +1,6 @@
 import math
 def find_port():
     try:
-        import serial
         from serial.tools import list_ports
         # detects connected communication ports.    
         valid_ports = [p[0] for p in list_ports.comports() if p[2] != 'n/a']
@@ -19,6 +18,22 @@ def find_port():
 
 def subtract_background(values,background):
     return [i - j for i, j in zip(values, background)]
+
+def read_raw_data_from_board(samples,ser):
+    ser.flushInput()
+    n = 0
+    attempts = 0
+    max_attempts = samples*1.2
+    results = []
+    while (n < samples):
+        attempts +=1
+        if attempts > max_attempts:
+            raise Exception("Maximum number of samples exceeded")
+        chars = ser.readline()
+        results.append(chars)
+        n += 1
+    return results
+        
 
 def read_from_board(samples,color_function,tile_indices,results,ser):
     """Reads specified number of samples from the specified indices and adds to results"""
