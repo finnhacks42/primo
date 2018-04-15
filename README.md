@@ -15,6 +15,8 @@ Contains design files and code for my version of the Primo robotic platform for 
    - 16 red leds
 
 ### Robot
+   - Kinder surprise egg
+   - laser cut zzz of 3mm ply
    - Arduino pro micro 
    - 2 gear motors 3-6V with tyres
    - HC05 or HC06 serial bluetooth chip
