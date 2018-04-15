@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="1702.1557"
+     inkscape:cx="1205.0128"
      inkscape:cy="282.47273"
      inkscape:document-units="mm"
      inkscape:current-layer="svg5522"
@@ -663,7 +663,8 @@
      d="m 1895.5548,1270.1079 a 13.664621,13.664621 0 0 1 -13.6647,13.6646 13.664621,13.664621 0 0 1 -13.6646,-13.6646 13.664621,13.664621 0 0 1 13.6646,-13.6646 13.664621,13.664621 0 0 1 13.6647,13.6646 z"
      id="path4248" />
   <path
-     style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.47267789;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 1751.8792,1251.2008 66.8501,0 0,37.8142 -66.8501,0 z"
-     id="rect4250" />
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.51696777;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 1751.9013,1247.4766 66.8059,0 0,45.2626 -66.8059,0 z"
+     id="rect4250"
+     inkscape:connector-curvature="0" />
 </svg>
