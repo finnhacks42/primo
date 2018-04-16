@@ -40,3 +40,9 @@ Contains design files and code for my version of the Primo robotic platform for 
 ### Robot
 
 ## Setting up Bluetooth
+
+We now need to set up the two bluetooth chips to automatically pair with one another when they are turned on. We will configure the chip in the board as the master and the chip in the robot as the slave. To set up the chips we first need to put them in AT mode. Using the pro-micro for your bot, construct the circuit below on a breadboard. 
+
+Note that different manufacturers of the HC-05 breakout boards have used slightly different variants of pin orderings. On my board they `key` pin is not broken out. To temporally pull it high while programming the chip in AT mode I have just wedged a jumper wire under the protective plastic coating (see photo). Alternatively you can solder a wire directly to the pad on the chip. 
+
+
