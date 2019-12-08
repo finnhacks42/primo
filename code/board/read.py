@@ -10,6 +10,7 @@ import serial
 from utils import find_port
 from datetime import datetime as dt
 from time import sleep
+from utils import read_results, group_data, apply_to_group, compute_normed_centers, mean, dict_of_lists_to_cstring
 BAUDRATE = 9600 # The baudrate to read data from the serial port on. Should match that set in your Arduino enviroment.
 
 
@@ -104,12 +105,20 @@ def read_board_data(samples_per_setting = 20, settings_per_config = 3):
                         print "VALID",parsed
                     else:
                         print "INVALID",line
+    return filename
         
                 
                 
     
+def output_arduino_code_fragment(datafile):
+    data = read_results(datafile)
+    g = group_data(data,[2,3,4],[0],lambda k: "{:02d}".format(int(k)))
+    average_brightness = apply_to_group(g, mean,lambda x: int(round(x)))
+    centers = compute_normed_centers(data,average_brightness)
+    print(dict_of_lists_to_cstring(average_brightness, sorted(average_brightness.keys()),'average_brightness','int'))
+    print(dict_of_lists_to_cstring(centers, ['Blue','Green','Red','Yellow'],'centers','int')) 
 
-colors = ['red','blue','light blue', 'yellow', 'green', 'light green', 'purple']
-#test_colors(colors)
-read_board_data()
+
+datafile = read_board_data()
+output_arduino_code_fragment(datafile)
             
