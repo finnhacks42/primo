@@ -23,9 +23,9 @@
 //------------------------------------
 // When you are setting up the master, edit this to the address of your slave.
 // NOTE: replace the : in the address with ,
-#define ADDRESS "3014,11,171927"
+#define ADDRESS "3014,11,172028"
 #define ROLE MASTER //SLAVE or MASTER
-#define ID '4' // If you are setting up multiple robot/board sets increment this for each set so that the names of the chips are not all the same
+#define ID '5' // If you are setting up multiple robot/board sets increment this for each set so that the names of the chips are not all the same
 //------------------------------------
 
 #define baudRate 38400 //The default baud rate for HC-05 chips in AT mode.
@@ -43,6 +43,7 @@ char c=' ';
 boolean NL = true;
 char response[MAX_RESPONSE_SIZE];
 
+char restorDefault[] = "ORGL";
 char nameQuery[] = "NAME?";
 char versionQuery[] = "VERSION?";
 char addressQuery[] = "ADDR?";
@@ -60,9 +61,9 @@ char setToMaster[] = "ROLE=1";
 char setMasterName[] = "NAME=KINDERBOARDX";
 
 
-char* slaveCommands[] = {nameQuery,versionQuery,setPassword,setCommunicationSpeed,cmode,
+char* slaveCommands[] = {restorDefault,nameQuery,versionQuery,setPassword,setCommunicationSpeed,cmode,
                             setToSlave,setSlaveName,bindSlave,addressQuery};
-char* masterCommands[] = {nameQuery,versionQuery,setPassword,setCommunicationSpeed,cmode,
+char* masterCommands[] = {restorDefault,nameQuery,versionQuery,setPassword,setCommunicationSpeed,cmode,
                             setMasterName,setToMaster,resetModule,clearPaired,initModule,pair,bind,link};
 
 int executeCommands(char** commands,int numCommands){
