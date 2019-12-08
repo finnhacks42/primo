@@ -1,4 +1,6 @@
+# depends on pyserial
 import math
+from collections import defaultdict
 def find_port():
     try:
         from serial.tools import list_ports
@@ -114,21 +116,75 @@ def separation(centers1,centers2):
     return d - u1 - u2
     
 
-def group_data(results,columns,groupby):
-    m = {}
-    for row in results:
-        key = ",".join([str(row[i]) for i in groupby])
-        if key not in m:
-            m[key]= [[] for i in columns]
+def group_data(data,columns,groupby,index_function = None):
+    """
+    Group a set of columns in a dataset by another set of columns.
+    
+    Parameters
+    ----------
+    data : list of list
+        the data to group
+    columns : bool
+        
+    groupby : list of int
+        list of indicies of the columns to group on
+        
+    index_function : 
+        function to apply to each value in the set of groupby columns 
+        before concatenating to construct the key
+        
+    Returns
+    ----------
+    group : dict str -> list of list
+        A dictionary from group id (formed by value concatenation) to a collection of lists
+        containing the values for each column requested.
+    
+    """
+    if index_function is None:
+        index_function = str
+    group = {}
+    for row in data:
+        key = ",".join([index_function(row[i]) for i in groupby])
+        if key not in group:
+            group[key]= [[] for i in columns]
         for indx,i in enumerate(columns):
-            m[key][indx].append(row[i])
-    return m
+            group[key][indx].append(row[i])
+    return group
 
-def apply_to_group(group,function):
+def apply_to_group(group,column_function, value_function = None, index_function = None):
+    """
+    Apply a function to a grouped set of data
+    
+    Parameters
+    ----------
+    group : dict str -> list of list
+        A grouped set of data
+    column_function : function on list
+        the function to apply to each set of values in the group
+    value_function : function on float/double (optional)
+        a function to apply to each value after the row function completes
+    index_function : function on str (optional)
+        a function to apply to each key in the group.
+       
+                
+    Returns
+    ----------
+    m : dict str -> list of function(list)
+    
+    """
     m = {}
     for key,value in group.iteritems():
-        m[key] = [function(lst) for lst in value]
+        if index_function is not None:
+            new_key = index_function(key)
+        else:
+            new_key = key
+        m[new_key] = [column_function(lst) for lst in value]
+        
+        if value_function is not None:
+            m[new_key] = [value_function(v) for v in m[new_key]]
+        
     return m
+
 
 def mean(lst):
     return sum(lst)/float(len(lst))
@@ -138,5 +194,37 @@ def mean_plus_minus(lst):
     d1 = max(lst) - m
     d2 = m - min(lst)
     return (int(round(m)),int(round(max(d1,d2))))
+
+def compute_normed_centers(data, average_brightness):
+    g = group_data(data,[2,3,4],[0,5])
+    group = defaultdict(lambda: [[],[],[]])
+    for key, values in g.items():
+        tile, tile_color = key.split(",")
+        tile = "{:02d}".format(int(tile))
+        averages = average_brightness[tile]
+        red, green, blue = values
+        red = map(lambda x: x - averages[0],red)
+        green = map(lambda x: x - averages[1],green)
+        blue = map(lambda x: x - averages[2],blue)
+        group[tile_color][0].extend(red)
+        group[tile_color][1].extend(green)
+        group[tile_color][2].extend(blue)
+        
+    centers = apply_to_group(group, mean,lambda x: int(round(x)))  
+    return centers
+
+def dict_of_lists_to_cstring(d,keys,array_name, array_type = 'int'):
+    """Return results as a c style array string"""
+    rows, columns = len(keys), len(d[keys[0]])
+    c_code = "{0} {1}[{2}][{3}] = {{\n".format(array_type, array_name, rows, columns)
+    
+    for k in keys:
+        row = d[k]
+        row_str = [str(x) for x in row]
+        c_code += '   {'+",".join(row_str)+"},\n"
+    c_code += '};\n'
+            
+    return c_code
+
 
 
