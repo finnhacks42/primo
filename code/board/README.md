@@ -28,6 +28,39 @@
       ```
       These numbers are the values of each LDR with the corresponding RGB-LED on/off respectively. The first number should be < 10 and the second > 150.
 
-   3. TODO Install python package 
+   3. Load the `CalibrateColours` sketch onto the board and run `python read.py` in the terminal. You should see `PLEASE SET BOARD TO CONFIGURATION: Red|Green|Blue|Yellow. Press any key to continue` in the terminal. This means set the board up like this:
 
-   4. Load the `CalibrateColours` sketch onto the board and run `python readdata.py` in the terminal and follow the instructions printed to the terminal. 
+   4. When the terminal reports `Shuffle. Press any key to continue`, move the tiles around so that each tile is in a new spot - but within the same column (ie which colour is in which column is unchanged). 
+
+   5. Continue for each board configuration. This generates the data from which to compute what LDR responses correspond to each colour of tile.  When all is complete, you should get an output like this;
+
+      ```
+      int average_brightness[16][3] = {
+         {507,588,256},
+         {684,687,365},
+         {709,643,295},
+         {652,670,342},
+         {694,410,420},
+         {625,439,460},
+         {696,508,496},
+         {590,361,339},
+         {710,606,282},
+         {651,661,333},
+         {627,663,366},
+         {660,632,309},
+         {615,520,90},
+         {650,661,304},
+         {715,699,371},
+         {681,559,277},
+      };
+      
+      int centers[4][3] = {
+         {-75,14,114},
+         {-91,-31,-40},
+         {72,-62,-43},
+         {94,78,-31},
+      };
+      ```
+
+   6. Copy and past these values into the `RobotControl` Arduino script
+
