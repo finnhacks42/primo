@@ -28,3 +28,6 @@
       ```
       These numbers are the values of each LDR with the corresponding RGB-LED on/off respectively. The first number should be < 10 and the second > 150.
 
+   3. TODO Install python package 
+
+   4. Load the `CalibrateColours` sketch onto the board and run `python readdata.py` in the terminal and follow the instructions printed to the terminal. 

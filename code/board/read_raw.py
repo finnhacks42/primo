@@ -12,8 +12,6 @@ filename = "data/raw_data_"+dt.strftime(dt.now(),'%Y%m%d%H%M')+".csv"
 with serial.Serial(port,BAUDRATE) as ser, open(filename,'wb') as outFile:
     while True:
         line = ser.readline()
-        print line
-        print len(line.split(","))
         outFile.write(line)
         outFile.flush()
         

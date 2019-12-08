@@ -14,8 +14,34 @@
 
 SoftwareSerial mySerial(10, 11); // RX - connect to orange TX line from HC05, TX - connect to green recive line on HCO5
 
-int centers[16][4][3]={{{434,600,389},{420,559,230},{588,534,219},{612,657,232}},{{602,699,485},{584,658,317},{745,629,303},{759,737,325}},{{648,670,451},{634,636,266},{778,615,260},{794,732,272}},{{578,682,490},{562,644,314},{736,618,306},{754,736,320}},{{642,472,525},{630,420,423},{758,374,426},{775,540,437}},{{558,467,565},{545,403,422},{689,341,429},{704,534,434}},{{628,546,636},{612,474,477},{759,401,480},{776,609,479}},{{494,386,480},{470,323,302},{690,274,299},{712,466,317}},{{641,618,408},{626,582,256},{787,558,252},{800,688,260}},{{583,686,523},{567,637,299},{719,605,277},{737,732,308}},{{558,663,486},{540,629,347},{709,612,340},{734,710,353}},{{579,660,441},{561,615,275},{731,582,267},{752,725,280}},{{562,548,212},{539,496,88},{742,466,86},{761,646,90}},{{561,675,448},{537,628,264},{737,599,250},{751,722,271}},{{659,688,501},{646,653,335},{772,634,325},{784,729,340}},{{622,578,400},{613,538,249},{739,506,245},{756,638,255}}};
-//int centers[16][4][3] = {{{412,142,362},{615,90,368},{458,95,446},{647,100,533}},{{471,247,543},{651,182,541},{510,188,600},{673,191,662}},{{474,153,465},{647,116,462},{515,120,528},{676,120,598}},{{613,418,670},{734,329,665},{638,339,692},{751,339,723}},{{447,368,307},{519,342,296},{460,346,356},{536,346,409}},{{579,449,393},{663,421,388},{596,425,458},{683,426,526}},{{522,274,185},{714,224,176},{564,226,270},{737,233,365}},{{593,394,325},{768,358,323},{634,362,396},{789,369,479}},{{520,424,741},{724,302,736},{569,316,781},{749,317,822}},{{539,216,521},{706,160,519},{574,164,582},{728,167,652}},{{568,311,568},{678,266,564},{590,272,608},{700,272,657}},{{402,218,436},{517,166,431},{424,173,470},{542,173,517}},{{495,300,497},{674,216,490},{532,226,576},{696,231,653}},{{479,263,493},{661,182,486},{518,193,563},{684,195,635}},{{350,183,430},{515,111,424},{383,121,497},{542,122,576}},{{580,205,558},{655,186,552},{593,190,580},{671,189,602}}};
+int centers[4][3] = {
+   {-75,14,114},
+   {-91,-31,-40},
+   {72,-62,-43},
+   {94,78,-31},
+};
+
+int average_brightness[16][3] = {
+   {507,588,255},
+   {684,686,365},
+   {709,643,295},
+   {652,670,342},
+   {694,410,420},
+   {625,439,460},
+   {696,508,496},
+   {590,361,339},
+   {710,606,282},
+   {651,661,333},
+   {627,663,366},
+   {660,632,309},
+   {615,520,90},
+   {650,661,304},
+   {715,699,371},
+   {681,559,277},
+};
+
+
+
 
 
 int leds[] = {36,40,44,48,47,43,39,35,34,38,42,46,49,37,41,45};
@@ -26,7 +52,6 @@ int redLeds[] =  {30,26,22,18,19,23,27,31,32,28,24,20,33,29,25,21};
 int colors[3] = {red,green,blue};
 int light[16][4]; // stores ldr values - background,red,green,blue
 int program[16];
-int rgb[3]; //temporary storage for the value of one tile
 
 int up_d = 30; // time to leave led on before reading value
 int down_d = 300; //time to turn off before reading next value
@@ -59,8 +84,6 @@ char instruction(int indx){
    if (indx == 3){return 'R';}
    return 'N';
 }
-
-
 
 void loop() // run over and over
 {
@@ -130,23 +153,7 @@ void loop() // run over and over
 
 
 
-void detectColors(){
-   readTileColors();
-   for (int tile=0; tile < 16; tile ++){
-     int matchColor = -1;
-     if (light[tile][0] < dark){       
-       int closest = INT_MAX;
-       for (int tileColor = 0; tileColor < 4; tileColor ++) {
-          unsigned int d = pow(light[tile][1]-centers[tile][tileColor][0],2)+ pow(light[tile][2]-centers[tile][tileColor][1],2) + pow(light[tile][3]-centers[tile][tileColor][2],2);
-          if (d < closest){
-             closest = d;
-             matchColor = tileColor; 
-          }
-       }
-     }
-     program[tile] = matchColor; 
-   } 
-}
+
 
 
 void readLDRs(int colorIndx){ //color indx 0 = background, 1=red, 2 = green, 3 = blue
@@ -156,15 +163,6 @@ void readLDRs(int colorIndx){ //color indx 0 = background, 1=red, 2 = green, 3 =
     }  
 }
 
-int readTileColor(int tile){
-  int background = analogRead(ldrs[tile]);
-  if (background > dark) {
-    return -1;
-  } else {
-    
-    
-  }
-}
   
 void readTileColors(){
   // reads the intensity of light reflected for each spot where a tile is placed and stashes values in light array
@@ -179,32 +177,59 @@ void readTileColors(){
   }
 }
 
-int detectTileColor(int tile){
-  // reads into global rgb variable  
-  int background = analogRead(ldrs[tile]);
-  if (background > dark){
-    return -1; 
-  } else {
-    for (int c = 0; c< 3; c++) {
-       int color = colors[c];
-       colorOnOne(color,tile);
-       delay(up_d);
-       rgb[c] = analogRead(ldrs[tile])-background;
-       off();
-       delay(down_d); 
-    }
-    // now find the closest match for the reflection response
-       int matchColor = -1;     
+
+void detectColors(){
+   readTileColors();
+   int rgb[16][3]; // stores normalised rgb values for each tile slot
+   for (int tile=0; tile < 16; tile ++){
+     int matchColor = -1;
+     if (light[tile][0] < dark){ 
+       for (int i = 0; i < 3; i++){
+          rgb[tile][i] = light[tile][i+1] - average_brightness[tile][i]; // +1 as first is background
+       }     
        int closest = INT_MAX;
        for (int tileColor = 0; tileColor < 4; tileColor ++) {
-          unsigned int d = pow(light[tile][1]-centers[tile][tileColor][0],2)+ pow(light[tile][2]-centers[tile][tileColor][1],2) + pow(light[tile][3]-centers[tile][tileColor][2],2);
+          unsigned int d = pow(rgb[tile][0] - centers[tileColor][0],2) 
+                     + pow(rgb[tile][1] - centers[tileColor][1],2)
+                     + pow(rgb[tile][2] - centers[tileColor][2],2);
           if (d < closest){
              closest = d;
              matchColor = tileColor; 
           }
        }
-     return matchColor; 
-   }
+     }
+     program[tile] = matchColor; 
+   } 
+}
+
+int detectTileColor(int tile){
+  // reads into global rgb variable  
+  int background = analogRead(ldrs[tile]);
+  if (background > dark){
+    return -1; 
+  } 
+  int rgb[3];
+  for (int c = 0; c< 3; c++) {
+     int color = colors[c];
+     colorOnOne(color,tile);
+     delay(up_d);
+     rgb[c] = analogRead(ldrs[tile])- average_brightness[tile][c];
+     off();
+     delay(down_d); 
+  }
+  // now find the closest match for the reflection response
+  int matchColor = -1;     
+  int closest = INT_MAX;
+  for (int tileColor = 0; tileColor < 4; tileColor ++) {
+    unsigned int d = pow(rgb[0] - centers[tileColor][0],2) 
+                     + pow(rgb[1] - centers[tileColor][1],2)
+                     + pow(rgb[2] - centers[tileColor][2],2);    
+    if (d < closest){
+       closest = d;
+       matchColor = tileColor; 
+    }
+  }
+  return matchColor;  
 }
 
 void colorOnOne(int color, int tile){
@@ -235,6 +260,3 @@ void off(){
       digitalWrite(leds[i],LOW);
     }
 }
-
-
-
