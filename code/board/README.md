@@ -62,5 +62,5 @@
       };
       ```
 
-   6. Copy and past these values into the `RobotControl` Arduino script
+   6. Copy and past these values into the `RobotControl` Arduino script. You should now be able to set up the board, put tiles in and see (on the serial monitor) the correct command being sent when the button is pushed. 
 
